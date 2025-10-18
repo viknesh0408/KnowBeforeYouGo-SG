@@ -23,6 +23,7 @@ document
         const data = {
             name: form.name.value,
             email: form.email.value,
+            mobile: form.mobile.value,
             message: form.message.value,
         };
 
