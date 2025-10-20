@@ -1,32 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--Ad cdn-->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7179341900725050"
-    crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KnowBeforeYouGo - Singapore Awareness Portal</title>
-  <link rel="icon" type="image/png" href="Assets/logo.png">
 
-
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Assets/logo1.png">
+
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #dc3545;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .navbar-brand{
+      color: #ffffff !important;
+      font-family: 'Poppins', sans-serif;
+    }
+    .navbar-brand img {
+      height: 40px !important;   
+      width: auto !important;
+      object-fit: contain;
+      margin-right: 10px;
+      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #ffffff !important;
+    }
+    .nav-link:hover {
+      color: #000 !important;
+      transition: 0.3s;
+    }
   
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    /* Buttons */
+    .btn-danger {
+      border-radius: 30px;
+      padding: 10px 25px;
+      transition: all 0.3s ease;
+    }
+    .btn-danger:hover {
+      background-color: white;
+      color: #dc3545;
+      transform: scale(1.05);
+    }
+
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      font-weight: 700;
+      margin-top: 80px;
+      margin-bottom: 40px;
+      color: #dc3545;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background-color: #dc3545;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 10px;
+    }
+
+    /* Cards */
+    .card {
+      border: none;
+      border-radius: 15px;
+      transition: all 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Laws Section */
+    #laws {
+      background: #fff5f5;
+      padding: 60px 0;
+      border-radius: 20px;
+    }
+
+    .laws-list li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .laws-list li:hover {
+      transform: translate(2px, -2px);
+      color: #dc3545;
+    }
+    
+
+    /* Contact Section */
+    #contact {
+      background: linear-gradient(135deg, #dc3545, #ff4f4f);
+      color: white;
+      padding: 80px 0;
+    }
+    #contact form {
+      background: white;
+      color: black;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #212529;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* Translate Element */
+    #google_translate_element {
+      position: fixed;
+      top: 90px;
+      right: 20px;
+      z-index: 1000;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 8px;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">
-        KnowBeforeYouGo SG
+      <a class="navbar-brand fw-bold text-danger" href="#">
+        <img src="Assets/logofull.png" alt="logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto"> 
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#visa">Visa Info</a></li>
           <li class="nav-item"><a class="nav-link" href="#laws">Laws</a></li>
@@ -38,274 +202,148 @@
     </div>
   </nav>
 
+  <!-- Translator -->
+  <div id="google_translate_element"></div>
+
   <!-- Hero Section -->
   <section class="hero">
-    <div>
+    <div data-aos="fade-up">
       <h1>Welcome to Singapore 🇸🇬</h1>
-      <p class="lead">Your complete guide to laws, visas, and local etiquette in the Lion City</p>
-      <a href="#visa" class="btn btn-light mt-3">Start Exploring</a>
+      <p>Your complete guide to laws, visas & travel tips before visiting the Lion City</p>
+      <a href="#visa" class="btn btn-danger mt-3 shadow">Start Exploring</a>
     </div>
   </section>
 
-  <!-- Advertisement Placeholder
-  <div class="ads-placeholder">
-    <h6>Advertisement Space</h6>
-    <p>Place your Google AdSense code here</p>
-  </div>  -->
-
-  <!-- Visa Info Section -->
+  <!-- Visa Section -->
   <section id="visa" class="container my-5">
     <h2 class="section-title">Visa & Entry Information</h2>
-
-    <!-- English -->
-    <div id="visa-en" style="display:none;">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Tourist Visa</h5>
-              <p>Many nationalities can enter Singapore visa-free for 30–90 days. Check if you need a visa on the ICA website.</p>
-              <a href="https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements" target="_blank" class="btn btn-danger btn-sm">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Employment Pass</h5>
-              <p>Foreign professionals working in Singapore need an Employment Pass issued by the Ministry of Manpower (MOM).</p>
-              <a href="https://www.mom.gov.sg/passes-and-permits/employment-pass" target="_blank" class="btn btn-danger btn-sm">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Student Pass</h5>
-              <p>Required for foreign students pursuing full-time studies in Singapore institutions approved by ICA.</p>
-              <a href="https://www.ica.gov.sg/enter-transit-depart/for-students" target="_blank" class="btn btn-danger btn-sm">Learn More</a>
-            </div>
-          </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card text-center p-3">
+          <i class="fa-solid fa-passport fa-3x text-danger mb-3"></i>
+          <h5>Tourist Visa</h5>
+          <p>Visa-free for many countries for 30–90 days. Check your visa status on ICA’s website.</p>
+          <a href="https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements" target="_blank" class="btn btn-danger btn-sm">Learn More</a>
         </div>
       </div>
-    </div>
-
-    <!-- Tamil -->
-    <div id="visa-ta" >
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">சுற்றுலா விசா</h5>
-              <p>பல நாடுகள் சிங்கப்பூருக்கு 30–90 நாட்கள் வரை விசா இல்லாமல் நுழையலாம். விசா தேவையா என்பதை ICA வலைத்தளத்தில் சரிபார்க்கவும்.</p>
-              <a href="https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements" target="_blank" class="btn btn-danger btn-sm">மேலும் அறிய</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">வேலைவாய்ப்பு அனுமதி (Employment Pass)</h5>
-              <p>சிங்கப்பூரில் பணியாற்றும் வெளிநாட்டு தொழில்நுட்ப வல்லுநர்கள் MOM வழங்கும் Employment Pass தேவை.</p>
-              <a href="https://www.mom.gov.sg/passes-and-permits/employment-pass" target="_blank" class="btn btn-danger btn-sm">மேலும் அறிய</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">மாணவர் அனுமதி</h5>
-              <p>சிங்கப்பூர் அங்கீகாரம் பெற்ற கல்வி நிறுவனங்களில் முழு நேர படிப்பில் வெளிநாட்டு மாணவர்களுக்கு மாணவர் அனுமதி தேவை.</p>
-              <a href="https://www.ica.gov.sg/enter-transit-depart/for-students" target="_blank" class="btn btn-danger btn-sm">மேலும் அறிய</a>
-            </div>
-          </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card text-center p-3">
+          <i class="fa-solid fa-briefcase fa-3x text-danger mb-3"></i>
+          <h5>Employment Pass</h5>
+          <p>Foreign professionals must apply for an Employment Pass from MOM.</p>
+          <a href="https://www.mom.gov.sg/passes-and-permits/employment-pass" target="_blank" class="btn btn-danger btn-sm">Learn More</a>
         </div>
       </div>
-    </div>
-
-    <!-- Buttons -->
-    <div class="mt-3">
-      <button class="btn btn-sm btn-outline-primary" onclick="showSection('visa','ta')">தமிழ்</button>
-      <button class="btn btn-sm btn-outline-primary" onclick="showSection('visa','en')">English</button>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card text-center p-3">
+          <i class="fa-solid fa-graduation-cap fa-3x text-danger mb-3"></i>
+          <h5>Student Pass</h5>
+          <p>Foreign students must obtain a Student Pass for full-time education.</p>
+          <a href="https://www.ica.gov.sg/enter-transit-depart/for-students" target="_blank" class="btn btn-danger btn-sm">Learn More</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Laws Section -->
-  <section id="laws" class="laws bg-light py-5 px-5">
-    <h2 class="section-title">Important Laws & Regulations</h2>
-
-    <!-- English -->
-    <div id="laws-en" style="display:none;">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">🚭 Smoking is prohibited in many public areas. Always look for designated smoking zones.</li>
-        <li class="list-group-item">🚫 Drug possession, trafficking, or consumption carries severe penalties — including the death penalty.</li>
-        <li class="list-group-item">💰 Littering, jaywalking, and vandalism are punishable by fines or community service.</li>
-        <li class="list-group-item">🧾 Chewing gum import and sale are restricted (except for medical/dental use).</li>
-        <li class="list-group-item">📸 Always get permission before photographing government buildings or restricted areas.</li>
+  <section id="laws" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title">Important Laws & Regulations</h2>
+      <ul class="laws-list list-unstyled">
+        <li>🚭 Smoking is prohibited in public areas — only smoke in designated zones.</li>
+        <li>🚫 Drug trafficking and possession carry the death penalty.</li>
+        <li>💰 Littering, vandalism, and jaywalking are punishable by fines.</li>
+        <li>🧾 Chewing gum sales and imports are restricted.</li>
+        <li>📸 Avoid photographing government or restricted areas.</li>
       </ul>
-    </div>
-
-    <!-- Tamil -->
-    <div id="laws-ta" >
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">🚭 பல பொதுப்பகுதிகளில் புகைப்பிடித்தல் தடை செய்யப்பட்டுள்ளது. குறிப்பிடப்பட்ட புகை பகுதியை பின்பற்றுங்கள்.</li>
-        <li class="list-group-item">🚫 மருந்துகள் வைத்திருத்தல், கடத்தல் அல்லது பயன்படுத்துதல் கடுமையான தண்டனைகள் உண்டு – மரண தண்டனை கூட உள்ளது.</li>
-        <li class="list-group-item">💰 கழிவுகளை வீசியல், சாலையில் மையமில்லாமல் நடக்குதல் மற்றும் சேதப்படுத்துதல் அபராதங்கள் அல்லது சமூக சேவையால் தண்டிக்கப்படலாம்.</li>
-        <li class="list-group-item">🧾 சிகரெட் ரப்பர்/சிகப்பான் விற்குதல் மற்றும் இறக்குமதி கட்டுப்பாடுகள் உள்ளன (மருத்துவ/பல் பயன்பாடு தவிர).</li>
-        <li class="list-group-item">📸 அரசு கட்டிடங்கள் அல்லது கட்டுப்பாடுள்ள பகுதிகளை புகைப்படம் எடுக்க முன் அனுமதி பெறவும்.</li>
-      </ul>
-    </div>
-
-    <!-- Buttons -->
-    <div class="mt-3">
-      <button class="btn btn-sm btn-outline-primary" onclick="showSection('laws','ta')">தமிழ்</button>
-      <button class="btn btn-sm btn-outline-primary" onclick="showSection('laws','en')">English</button>
-
     </div>
   </section>
 
-  <!-- Do's & Don'ts Section -->
-  <section id="dosdonts" class="container my-5">
-    <h2 class="section-title">Do's & Don'ts in Singapore</h2>
-
-    <!-- English -->
-    <div id="dosdonts-en" style="display:none;">
-      <div class="row">
-        <div class="col-md-6">
-          <h5 class="text-success">✅ Do’s</h5>
-          <ul>
-            <li>Do carry cash: While digital payments are common, some hawker centers and small shops prefer cash, especially Singapore dollars (SGD).</li>
-            <li>Do carry identification: Keep your passport or ID handy, as police may conduct random checks.</li>
-            <li>Be punctual for meetings and appointments.</li>
-            <li>Respect local customs and multicultural diversity.</li>
-            <li>Use public transport (MRT, buses) — clean, efficient, and safe.</li>
-            <li>Stand on the left side of escalators; let others pass on the right.</li>
-            <li>Dispose of trash properly — Singapore is known for its cleanliness.</li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <h5 class="text-danger">❌ Don’ts</h5>
-          <ul>
-            <li>Don't feed wild animals: Feeding animals like monkeys can result in significant fines. </li>
-            <li>Don’t litter, spit, or smoke in prohibited areas.</li>
-            <li>Don’t eat or drink on public transport — it’s against the law.</li>
-            <li>Don’t engage in public displays of affection in conservative areas.</li>
-            <li>Don’t bring chewing gum into Singapore illegally.</li>
-            <li>Don’t criticize religion or race — Singapore enforces harmony strictly.</li>
-            <li>Don’t take photos without consent: Respect privacy, especially in private spaces or when photographing locals or religious sites.</li>
-          </ul>
-        </div>
+  <!-- Do’s and Don’ts -->
+  <section id="dosdonts" class="container my-5" data-aos="fade-up">
+    <h2 class="section-title">Do’s & Don’ts in Singapore</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="text-success"><i class="fa-solid fa-circle-check"></i> Do’s</h5>
+        <ul>
+          <li>Be punctual and respectful.</li>
+          <li>Use public transport responsibly.</li>
+          <li>Keep the environment clean.</li>
+          <li>Stand left on escalators.</li>
+          <li>Respect cultural diversity.</li>
+        </ul>
       </div>
-    </div>
-
-    <!-- Tamil -->
-    <div id="dosdonts-ta">
-      <div class="row">
-        <div class="col-md-6">
-          <h5 class="text-success">✅ செய்யவேண்டியது</h5>
-          <ul>
-            <li>பணத்தை எடுத்துச் செல்லுங்கள்: டிஜிட்டல் பணம் செலுத்துதல் பொதுவானது என்றாலும், சில வணிக மையங்கள் சிறிய கடைகளும் பணத்தை, குறிப்பாக சிங்கப்பூர் டாலர்களை (SGD) விரும்புகின்றன.</li>
-            <li>அடையாளத்தை எடுத்துச் செல்லுங்கள்: போலீசார் திடீர் சோதனைகள் நடத்தலாம், எனவே உங்கள் பாஸ்போர்ட் அல்லது அடையாளத்தை அருகிலேயே வைத்திருங்கள்.</li>
-            <li>மீட்டிங்களுக்கும் சந்திப்புகளுக்கும் நேரத்திற்கு வந்து சேருங்கள்.</li>
-            <li>பல்வேறு பண்பாட்டு மரபுகள் மற்றும் பன்முகத் தன்மையை மதியுங்கள்.</li>
-            <li>பொது போக்குவரத்து (MRT, பஸ்கள்) பயன்படுத்துங்கள் — சுத்தமான, திறமையான மற்றும் பாதுகாப்பானது.</li>
-            <li>எஸ்கலேட்டரில் இடது பக்கம் நின்று விட்டு, வலது பக்கம் செல்ல வேண்டியவர்களுக்கு இடம் விடுங்கள்.</li>
-            <li>கழிவுகளை சரியாக விட்டு விடுங்கள் — சிங்கப்பூர் சுத்தம் புகழ்பெற்றது.</li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <h5 class="text-danger">❌ செய்யக்கூடாதது</h5>
-          <ul>
-            <li>காட்டு விலங்குகளுக்கு உணவளிக்க வேண்டாம்: குரங்குகள் போன்ற விலங்குகளுக்கு உணவளிப்பது குறிப்பிடத்தக்க அபராதங்களை விதிக்க வழிவகுக்கும்.</li>
-            <li>கழிவுகளை வீச, துளைக்க, அல்லது தடை செய்யப்பட்ட இடங்களில் புகை பிடிக்க வேண்டாம்.</li>
-            <li>பொது போக்குவரத்தில் உணவு அல்லது பானம் சேகரிக்க வேண்டாம் — இது சட்டத்திற்கு விரோதம்.</li>
-            <li>பொது இடங்களில் அன்புத் திரை வெளிப்பாடுகளில் ஈடுபட வேண்டாம்.</li>
-            <li>சிங்கப்பூருக்கு சிகப்பான் சட்டவிரோதமாக கொண்டு வராதீர்கள்.</li>
-            <li>மதம் அல்லது இனத்தை விமர்சிக்க வேண்டாம் — சிங்கப்பூர் ஒற்றுமையை கடுமையாக காக்கிறது.</li>
-            <li>அனுமதி இல்லாமல் புகைப்படம் எடுக்க வேண்டாம்: தனியுரிமையை மதிக்கவும், குறிப்பாக தனியாரான இடங்களில் அல்லது உள்ளூர்வாசிகள் அல்லது மதத்திற்கேற்ப இடங்களில் புகைப்படம் எடுக்கும்போது.</li>
-          </ul>
-        </div>
+      <div class="col-md-6">
+        <h5 class="text-danger"><i class="fa-solid fa-ban"></i> Don’ts</h5>
+        <ul>
+          <li>Don’t litter or spit.</li>
+          <li>Don’t eat or drink in public transport.</li>
+          <li>Don’t bring illegal chewing gum.</li>
+          <li>Don’t make offensive comments on religion or race.</li>
+        </ul>
       </div>
-    </div>
-
-    <!-- Buttons -->
-    <div class="mt-3">
-      <button class="btn btn-sm btn-outline-primary" onclick="showSection('dosdonts','ta')">தமிழ்</button>
-      <button class="btn btn-sm btn-outline-primary" onclick="showSection('dosdonts','en')">English</button>
-
     </div>
   </section>
 
-  <!-- Travel Tips Section -->
-  <section id="traveltips" class="bg-light py-5 px-5">
-    <h2 class="section-title">🧳 Travel Tips for Visitors</h2>
-
-    <!-- English -->
-    <div id="traveltips-en" style="display:none;">
+  <!-- Travel Tips -->
+  <section id="traveltips" class="bg-light py-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title">Travel Tips for Visitors</h2>
       <div class="row g-4">
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">1. Getting Around 🚆</h5><p>The MRT (Mass Rapid Transit) and public buses cover almost all parts of Singapore. Buy an **EZ-Link card** or use your contactless bank card for convenience.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">2. Weather 🌦️</h5><p>Singapore is hot and humid year-round (around 30°C). Carry water, wear light clothes, and bring an umbrella for sudden rain showers.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">3. SIM Cards & Wi-Fi 📱</h5><p>Buy a **prepaid SIM card** from Singtel, StarHub, or M1 at the airport. Free public Wi-Fi is available at malls and MRT stations via <strong>Wireless@SG</strong>.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">4. Money & Payments 💳</h5><p>Currency: Singapore Dollar (SGD). Cards are accepted almost everywhere. For small shops or hawker centres, carry some cash.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">5. Health & Safety 🚑</h5><p>Tap water is safe to drink. Singapore is one of the world’s safest countries — but always watch your belongings in crowded areas.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">6. Best Time to Visit 📅</h5><p>Singapore can be visited year-round. Major festivals include **Chinese New Year (Jan/Feb)**, **Deepavali (Oct/Nov)**, and **National Day (Aug 9)**.</p></div></div></div>
+        <div class="col-md-4">
+          <div class="card h-100 p-3">
+            <i class="fa-solid fa-train-subway fa-2x text-danger mb-3"></i>
+            <h5>Getting Around</h5>
+            <p>Use MRT and buses for convenience. Grab an EZ-Link or bank card for travel.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 p-3">
+            <i class="fa-solid fa-sun fa-2x text-danger mb-3"></i>
+            <h5>Weather</h5>
+            <p>Hot and humid all year (~30°C). Carry water and an umbrella for rain.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 p-3">
+            <i class="fa-solid fa-wifi fa-2x text-danger mb-3"></i>
+            <h5>Connectivity</h5>
+            <p>Buy prepaid SIM cards from Singtel or StarHub. Free Wi-Fi: Wireless@SG.</p>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- Tamil -->
-    <div id="traveltips-ta">
-      <div class="row g-4">
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">1. சுற்றுப்பயணம் 🚆</h5><p>MRT மற்றும் பொதுப் பஸ்கள் சிங்கப்பூரின் பெரும்பாலான பகுதிகளைக் இணைக்கின்றன. **EZ-Link கார்டை** வாங்குங்கள் அல்லது உங்கள் contactless வங்கி கார்டை பயன்படுத்தலாம்.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">2. காலநிலை 🌦️</h5><p>சிங்கப்பூர் வருட முழுவதும் சூடானதும் ஈரமானதும் (சுமார் 30°C). தண்ணீர் எடுத்துச் செல்லுங்கள், இலகுவான உடைகள் அணியுங்கள், எப்போதும் மழை பெய்யும்போது குடை கொண்டு செல்லுங்கள்.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">3. SIM கார்டுகள் & Wi-Fi 📱</h5><p>விமான நிலையத்தில் Singtel, StarHub அல்லது M1 இலிருந்து **prepaid SIM கார்டை** வாங்குங்கள். மால்கள் மற்றும் MRT நிலையங்களில் <strong>Wireless@SG</strong> மூலம் இலவச Wi-Fi கிடைக்கிறது.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">4. பணம் & கட்டணங்கள் 💳</h5><p>நாணயம்: சிங்கப்பூர் டாலர் (SGD). அட்டை பெரும்பாலான இடங்களிலும் செல்லும். சிறிய கடைகள் அல்லது ஹாக்கர் மையங்களில் சிறிய பணம் எடுத்துச் செல்லுங்கள்.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">5. உடல் நலம் & பாதுகாப்பு 🚑</h5><p>நீர் குடிக்க பாதுகாப்பாக உள்ளது. சிங்கப்பூர் உலகின் பாதுகாப்பான நாடுகளில் ஒன்று — ஆனால் கூட்டம் நிறைந்த பகுதிகளில் உங்கள் பொருட்களை கவனிக்கவும்.</p></div></div></div>
-        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h5 class="card-title">6. செல்வதற்கான சிறந்த காலம் 📅</h5><p>சிங்கப்பூரை வருட முழுவதும் பார்க்கலாம். முக்கிய விழாக்கள்: **சீன புத்தாண்டு (ஜனவரி/பிப்ரவரி)**, **தீபாவளி (அக்டோபர்/நவம்பர்)**, **தேசிய நாள் (ஆகஸ்ட் 9)**.</p></div></div></div>
-      </div>
-    </div>
-
-    <!-- Buttons -->
-    <div class="mt-3">
-      <button class="btn btn-sm btn-outline-primary" onclick="showSection('traveltips','ta')">தமிழ்</button>
-      <button class="btn btn-sm btn-outline-primary" onclick="showSection('traveltips','en')">English</button>
-
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-5">
+  <section id="contact" data-aos="fade-up">
     <div class="container">
-      <h2 class="section-title">Contact & Helplines</h2>
+      <h2 class="section-title text-white">Contact & Helplines</h2>
       <div class="row">
         <div class="col-md-6">
           <h5>📞 Emergency Numbers</h5>
           <ul>
             <li><strong>Police:</strong> 999</li>
             <li><strong>Ambulance & Fire:</strong> 995</li>
-            <li><strong>Tourist Info Hotline:</strong> 1800-736-2000</li>
+            <li><strong>Tourist Hotline:</strong> 1800-736-2000</li>
           </ul>
         </div>
         <div class="col-md-6">
-          <h5>💬 Contact Us</h5>
           <form id="contactForm">
-              <div class="mb-3">
-                <label class="form-label">Your Name</label>
-                <input type="text" name="name" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Mobile Number</label>
-                <input type="number" name="mobile" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Message</label>
-                <textarea name="message" class="form-control" rows="4" required></textarea>
-              </div>
-              <button class="btn btn-danger" type="submit">Send Message</button>
-              <p id="formStatus" class="mt-3"></p>
+            <div class="mb-3">
+              <label>Your Name</label>
+              <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label>Message</label>
+              <textarea name="message" rows="4" class="form-control" required></textarea>
+            </div>
+            <button class="btn btn-danger w-100" type="submit">Send Message</button>
+            <p id="formStatus" class="mt-3 text-center"></p>
           </form>
         </div>
       </div>
@@ -314,11 +352,58 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 KnowBeforeYouGo Singapore</p>
+    <p>&copy; 2025 KnowBeforeYouGo Singapore | Designed with ❤️</p>
   </footer>
 
+  <!-- Translator Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,ta',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  <script src="script.js"></script>
+  <!-- Bootstrap + AOS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
+
+  <!-- Form Script -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const status = document.getElementById("formStatus");
+
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
+
+      status.innerHTML = "⏳ Sending message...";
+
+      try {
+        const response = await fetch("https://formspree.io/f/manpvrpo", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          status.innerHTML = "✅ Message sent successfully!";
+          form.reset();
+        } else {
+          status.innerHTML = "❌ Failed to send. Try again later.";
+        }
+      } catch {
+        status.innerHTML = "⚠️ Network error.";
+      }
+    });
+  </script>
 </body>
 </html>
