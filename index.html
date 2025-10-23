@@ -367,6 +367,10 @@
               <input type="email" name="email" class="form-control" required>
             </div>
             <div class="mb-3">
+              <label>Phone</label>
+              <input type="number" name="phone" class="form-control" required>
+            </div>
+            <div class="mb-3">
               <label>Message</label>
               <textarea name="message" rows="4" class="form-control" required></textarea>
             </div>
@@ -409,6 +413,7 @@
       const data = {
         name: form.name.value,
         email: form.email.value,
+        phone: form.phone.value,
         message: form.message.value
       };
 
