@@ -102,6 +102,46 @@
       transform: scale(1.05);
     }
 
+    /* Information Section Styling */
+      .info-box {
+        transition: all 0.3s ease;
+      }
+      .info-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .icon-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+      .information-list li {
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      .information-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #dc3545;
+        font-weight: bold;
+      }
+      .information-list a {
+        color: #0078d7;
+        text-decoration: none;
+      }
+      .information-list a:hover {
+        text-decoration: underline;
+      }
+
+
     /* Section Titles */
     .section-title {
       text-align: center;
@@ -131,6 +171,11 @@
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .more-info .btn{
+      display: flex;
+      justify-content: center;
     }
 
     /* Laws Section */
@@ -220,6 +265,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#information">You Should Know</a></li>
           <li class="nav-item"><a class="nav-link" href="#visa">Visa Info</a></li>
           <li class="nav-item"><a class="nav-link" href="#laws">Laws</a></li>
           <li class="nav-item"><a class="nav-link" href="#dosdonts">Do's & Don'ts</a></li>
@@ -241,6 +287,74 @@
       <a href="#visa" class="btn btn-danger mt-3 shadow">Start Exploring</a>
     </div>
   </section>
+
+  <!-- Main Information Section -->
+<section id="information" class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title mb-5 text-center text-danger fw-bold">You Should Know</h2>
+
+    <!-- Before Applying Any Work Pass -->
+    <div class="info-box mb-5 p-4 shadow-sm bg-white rounded-4" data-aos="fade-right">
+      <div class="d-flex align-items-center mb-3">
+        <div class="icon-circle bg-danger text-white me-3">
+          <i class="fa-solid fa-file-signature fa-lg"></i>
+        </div>
+        <h3 class="fw-bold mb-0 text-dark">Before Applying Any Work Pass</h3>
+      </div>
+      <ul class="information-list list-unstyled ps-3">
+        <li>Know which job you are applying for and at which company.</li>
+        <li>Be aware of your declared salary and occupation mentioned in your IPA.</li>
+        <li>You must work only for the stated salary and occupation in your IPA.</li>
+        <li>It’s an offence to work if you know you’re not going to work in the stated occupation or receive the declared salary in the IPA.</li>
+        <li>Any employment agency in Singapore can only charge one month of your salary for a 1-year work pass or two months for a 2-year work pass. More than that is illegal.</li>
+        <li>Don’t believe agents who say <span class="text-danger">“you go first on this pass and I will convert it later”</span> and don’t pay high fees.</li>
+        <li>You can’t work on a special pass — it’s an offence.</li>
+      </ul>
+    </div>
+
+    <!-- After Applying Any Work Pass -->
+    <div class="info-box mb-5 p-4 shadow-sm bg-white rounded-4" data-aos="fade-left">
+      <div class="d-flex align-items-center mb-3">
+        <div class="icon-circle bg-danger text-white me-3">
+          <i class="fa-solid fa-briefcase fa-lg"></i>
+        </div>
+        <h3 class="fw-bold mb-0 text-dark">After Applying Any Work Pass</h3>
+      </div>
+      <ul class="information-list list-unstyled ps-3">
+        <li>Work Permit applications take around 1 working day to get approved.</li>
+        <li>S-Pass and other work pass applications take between 5 days and 3 weeks.</li>
+        <li>You can check your application status on 
+          <a href="https://service2.mom.gov.sg/workpass/enquiry/landing" target="_blank">this official MOM website</a>.
+        </li>
+        <li>If status shows <span class="text-warning fw-semibold">Pending</span>, wait or ensure your employer submits required documents.</li>
+        <li>If status shows <span class="text-success fw-semibold">Valid</span>, your IPA (In-Principle Approval) is ready.</li>
+        <li>Ask your employer for the IPA stating your occupation, company, and salary.</li>
+        <li>Cross-check the IPA for differences from what you were promised.</li>
+        <li>Working in a different job or for less salary than your IPA states is a <span class="text-danger fw-semibold">crime</span> — you can be deported.</li>
+        <li>Contact MOM (Ministry of Manpower) if unsure about your company.</li>
+        <li>Buy the ACRA company details file for SGD 5.50 if you want to verify a company.</li>
+        <li>If you want to cancel the process, call MOM to inform them.</li>
+      </ul>
+    </div>
+
+    <!-- After Arriving in Singapore -->
+    <div class="info-box p-4 shadow-sm bg-white rounded-4" data-aos="fade-right">
+      <div class="d-flex align-items-center mb-3">
+        <div class="icon-circle bg-danger text-white me-3">
+          <i class="fa-solid fa-plane-arrival fa-lg"></i>
+        </div>
+        <h3 class="fw-bold mb-0 text-dark">After Arriving in Singapore</h3>
+      </div>
+      <ul class="information-list list-unstyled ps-3">
+        <li>Your employer must issue your work pass before you start work.</li>
+        <li>You cannot start work before your pass is issued.</li>
+        <li>After issuance, go for thumbprint registration.</li>
+        <li>Your Work Pass card will arrive by post within 5 working days.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
   <!-- Visa Section -->
   <section id="visa" class="container my-5">
@@ -270,7 +384,13 @@
           <a href="https://www.ica.gov.sg/enter-transit-depart/for-students" target="_blank" class="btn btn-danger btn-sm">Learn More</a>
         </div>
       </div>
+      <!-- More Pass Information -->
+     <div class="more-info" data-aos="fade-up" data-aos-delay="250">
+        <button class="btn btn-info btn-sm">Show More</button>
+     </div>
     </div>
+
+    
   </section>
 
   <!-- Laws Section -->
