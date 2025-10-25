@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Other Pass Information</title>
+    <meta name="description" content="Overview of common Singapore work, study and dependent passes. Quick eligibility, duration and docs." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Assets/logo.png">
+
+
+    <style>
+        :root{
+            --bg:#f5f7fb;
+            --card:#ffffff;
+            --muted:#6b7280;
+            --accent:#dc3545;
+            --accent-2:#b61e2d;
+            --glass: rgba(255,255,255,0.6);
+            --radius:12px;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            background: linear-gradient(180deg, #eef2f6 0%, var(--bg) 100%);
+            color:#0f172a;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.5;
+        }
+        header{
+            max-width:1100px;
+            margin:28px auto;
+            padding:22px;
+            display:flex;
+            align-items:center;
+            gap:18px;
+            border-radius:14px;
+            background:linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+            box-shadow:0 6px 18px rgba(12,20,40,0.06);
+        }
+        .logo{
+            width:56px;height:56px;border-radius:10px;
+            display:grid;place-items:center;
+            background:linear-gradient(135deg,var(--accent),var(--accent-2));
+            color:white;font-weight:700;font-size:20px;
+            box-shadow:0 6px 18px rgba(14,165,163,0.18);
+        }
+        .title{
+            display:flex;flex-direction:column;
+        }
+        .title h1{margin:0;font-size:18px;font-weight:700}
+        .title p{margin:2px 0 0;color:var(--muted);font-size:13px}
+
+        .container{
+            max-width:1100px;margin:24px auto;padding:18px;
+            display:grid;grid-template-columns:1fr 360px;gap:22px;
+        }
+        main{
+            background:transparent;
+        }
+        .hero{
+            border-radius:var(--radius);
+            padding:20px;
+            margin-bottom:18px;
+            background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.7));
+            box-shadow:0 6px 18px rgba(12,20,40,0.04);
+        }
+        .hero h2{margin:0 0 6px;font-size:20px}
+        .hero p{margin:0;color:var(--muted);font-size:14px;}
+        .searchbar{
+            margin-top:14px;display:flex;gap:8px;
+        }
+        .searchbar input{
+            flex:1;padding:10px 12px;border-radius:10px;border:1px solid #e6e9ef;background:white;font-size:14px;
+            outline:none;
+        }
+        .searchbar button{
+            padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:600;cursor:pointer;
+        }
+
+        .cards{
+            display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;
+        }
+        .card{
+            background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(15,23,42,0.04);
+            box-shadow:0 6px 18px rgba(12,20,40,0.04);
+            display:flex;flex-direction:column;gap:8px;
+        }
+        .card h3{margin:0;font-size:16px}
+        .meta{font-size:13px;color:var(--muted)}
+        .pill{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(14,165,163,0.08);color:var(--accent-2);font-weight:600;font-size:12px}
+        .small{font-size:13px;color:var(--muted)}
+        .cols{display:flex;gap:12px;flex-wrap:wrap}
+        .cta{margin-top:8px;padding:8px 10px;background:var(--accent-2);color:white;border-radius:10px;text-align:center;font-weight:600;cursor:pointer;border:0}
+
+        aside{
+            position:relative;
+            align-self:start;
+            padding:16px;border-radius:12px;
+            background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+            box-shadow:0 8px 24px rgba(12,20,40,0.06);
+            border:1px solid rgba(15,23,42,0.03);
+        }
+        .aside-section{margin-bottom:14px}
+        .aside-section h4{margin:0 0 8px;font-size:14px}
+        .aside-section ul{margin:0;padding:0 0 0 18px;color:var(--muted);font-size:13px}
+        footer{
+            max-width:1100px;margin:18px auto;padding:16px;border-radius:10px;color:var(--muted);
+            display:flex;justify-content:space-between;align-items:center;font-size:13px;
+        }
+        .badge{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(14,165,163,0.09);color:var(--accent-2);font-weight:600}
+        @media (max-width:900px){
+            .container{grid-template-columns:1fr;padding:16px}
+            aside{order:2}
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="container">
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <h2 id="hero-title">Find the right pass</h2>
+                <p>Browse core Singapore passes — work, study and dependent schemes. Click a card for details and application notes.</p>
+
+                <div class="searchbar" role="search">
+                    <input id="search" placeholder="Search passes (e.g., Employment, S Pass, Student)"/>
+                    <button id="clear">Clear</button>
+                </div>
+            </section>
+
+            <section class="cards" id="cards" aria-live="polite">
+                <!-- Card: Employment Pass -->
+                <article class="card" data-tags="employment pass work skilled">
+                    <div class="cols">
+                        <div>
+                            <h3>Employment Pass (EP)</h3>
+                            <div class="meta">For professionals, managers, executives</div>
+                        </div>
+                        <div style="margin-left:auto"><span class="pill">Work</span></div>
+                    </div>
+                    <div class="small"><strong>Eligibility:</strong> Job offer in Singapore with qualifying salary and credentials.</div>
+                    <div class="small"><strong>Duration:</strong> Up to 2 years, renewable.</div>
+                    <div class="small"><strong>Main documents:</strong> Passport, employment contract, degree/certificates.</div>
+                    <button class="cta" onclick="showDetails('ep')">View details</button>
+                </article>
+
+                <!-- Card: S Pass -->
+                <article class="card" data-tags="s pass mid skilled">
+                    <div class="cols">
+                        <div>
+                            <h3>S Pass</h3>
+                            <div class="meta">For mid-skilled foreign workers</div>
+                        </div>
+                        <div style="margin-left:auto"><span class="pill">Work</span></div>
+                    </div>
+                    <div class="small"><strong>Eligibility:</strong> Minimum qualifying salary, quota dependent on employer.</div>
+                    <div class="small"><strong>Duration:</strong> Up to 2 years, renewable.</div>
+                    <div class="small"><strong>Main documents:</strong> Employer application, passport, payslips, education certificates.</div>
+                    <button class="cta" onclick="showDetails('s')">View details</button>
+                </article>
+
+                <!-- Card: Work Permit -->
+                <article class="card" data-tags="work permit foreign worker construction marine">
+                    <div class="cols">
+                        <div>
+                            <h3>Work Permit (WP)</h3>
+                            <div class="meta">For semi-skilled or unskilled workers (e.g., construction, marine)</div>
+                        </div>
+                        <div style="margin-left:auto"><span class="pill">Work</span></div>
+                    </div>
+                    <div class="small"><strong>Eligibility:</strong> Depends on nationality and sector; employer must apply.</div>
+                    <div class="small"><strong>Duration:</strong> Shorter terms, sector-dependent.</div>
+                    <div class="small"><strong>Notes:</strong> Quotas, levies and standard employment rules apply.</div>
+                    <button class="cta" onclick="showDetails('wp')">View details</button>
+                </article>
+
+                <!-- Card: EntrePass -->
+                <article class="card" data-tags="entrepass startup entrepreneur business">
+                    <div class="cols">
+                        <div>
+                            <h3>EntrePass</h3>
+                            <div class="meta">For entrepreneurs/startup founders</div>
+                        </div>
+                        <div style="margin-left:auto"><span class="pill">Startup</span></div>
+                    </div>
+                    <div class="small"><strong>Eligibility:</strong> New business with innovation potential or meeting qualifying criteria.</div>
+                    <div class="small"><strong>Duration:</strong> Typically 1–2 years, renewable if business milestones met.</div>
+                    <div class="small"><strong>Docs:</strong> Business plan, investor letters, company incorporation documents.</div>
+                    <button class="cta" onclick="showDetails('entre')">View details</button>
+                </article>
+
+                <!-- Card: Personalized Employment Pass -->
+                <article class="card" data-tags="pep employment personalized pass">
+                    <div class="cols">
+                        <div>
+                            <h3>Personalised Employment Pass (PEP)</h3>
+                            <div class="meta">For high-earning professionals (no employer tie)</div>
+                        </div>
+                        <div style="margin-left:auto"><span class="pill">Premium</span></div>
+                    </div>
+                    <div class="small"><strong>Eligibility:</strong> High fixed salary or prior EP with high earnings.</div>
+                    <div class="small"><strong>Duration:</strong> Up to 3 years, not tied to employer.</div>
+                    <div class="small"><strong>Note:</strong> Allows job-switching without new pass application.</div>
+                    <button class="cta" onclick="showDetails('pep')">View details</button>
+                </article>
+
+                <!-- Card: Dependant's Pass -->
+                <article class="card" data-tags="dependant pass family spouse child">
+                    <div class="cols">
+                        <div>
+                            <h3>Dependant's Pass (DP)</h3>
+                            <div class="meta">For spouses and children of qualifying pass holders</div>
+                        </div>
+                        <div style="margin-left:auto"><span class="pill">Family</span></div>
+                    </div>
+                    <div class="small"><strong>Eligibility:</strong> Holder of sufficient qualifying pass (e.g., EP).</div>
+                    <div class="small"><strong>Duration:</strong> Matches main pass validity.</div>
+                    <div class="small"><strong>Note:</strong> DP holders may need work permission to take up employment.</div>
+                    <button class="cta" onclick="showDetails('dp')">View details</button>
+                </article>
+
+                <!-- Card: Long-Term Visit Pass -->
+                <article class="card" data-tags="ltvp visit long term family parents">
+                    <div class="cols">
+                        <div>
+                            <h3>Long-Term Visit Pass (LTVP)</h3>
+                            <div class="meta">For extended family members or accompanying spouses (conditional)</div>
+                        </div>
+                        <div style="margin-left:auto"><span class="pill">Family</span></div>
+                    </div>
+                    <div class="small"><strong>Eligibility:</strong> Depends on relationship and sponsor's status.</div>
+                    <div class="small"><strong>Duration:</strong> Varies; often renewable.</div>
+                    <div class="small"><strong>Note:</strong> Employment eligibility may be restricted.</div>
+                    <button class="cta" onclick="showDetails('ltvp')">View details</button>
+                </article>
+
+                <!-- Card: Student Pass -->
+                <article class="card" data-tags="student pass study education school university">
+                    <div class="cols">
+                        <div>
+                            <h3>Student Pass</h3>
+                            <div class="meta">For full-time students at approved institutions</div>
+                        </div>
+                        <div style="margin-left:auto"><span class="pill">Study</span></div>
+                    </div>
+                    <div class="small"><strong>Eligibility:</strong> Admission offer from a registered institution.</div>
+                    <div class="small"><strong>Duration:</strong> Tied to course duration.</div>
+                    <div class="small"><strong>Docs:</strong> Admission letter, proof of funds, passport.</div>
+                    <button class="cta" onclick="showDetails('student')">View details</button>
+                </article>
+
+            </section>
+
+            <!-- Details modal (simple) -->
+            <div id="detailModal" style="display:none;position:fixed;inset:0;z-index:60;align-items:center;justify-content:center;padding:20px;">
+                <div id="modalBackdrop" style="position:absolute;inset:0;background:rgba(5,10,20,0.45);" onclick="closeDetails()"></div>
+                <div style="position:relative;max-width:820px;width:100%;background:#fff;border-radius:12px;overflow:auto;padding:20px;box-shadow:0 24px 64px rgba(3,7,18,0.4);">
+                    <button onclick="closeDetails()" style="position:absolute;right:14px;top:12px;border:0;background:transparent;font-size:18px;cursor:pointer">✕</button>
+                    <div id="detailContent"></div>
+                </div>
+            </div>
+
+        </main>
+
+        <aside aria-labelledby="aside-title">
+            <div class="aside-section">
+                <h4 id="aside-title">Quick tips</h4>
+                <ul>
+                    <li>Always check eligibility and quota rules before applying.</li>
+                    <li>Applications are typically submitted by employers or sponsors.</li>
+                    <li>Keep certified copies of education and employment records ready.</li>
+                    <li>Processing times and fees vary by pass type.</li>
+                </ul>
+            </div>
+
+            <div class="aside-section">
+                <h4>When to contact MOM</h4>
+                <ul>
+                    <li>For clarifications on eligibility or appeals.</li>
+                    <li>To report issues with pass issuance or cancellation.</li>
+                </ul>
+            </div>
+
+            <div class="aside-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li>Official government websites and e-services for applications.</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="muted">Last updated: 2025</div>
+        <div class="badge">Informational — verify with authorities</div>
+    </footer>
+
+    <script>
+        // Simple search filter and details content
+        const cards = Array.from(document.querySelectorAll('.card'));
+        const search = document.getElementById('search');
+        const clear = document.getElementById('clear');
+        const detailModal = document.getElementById('detailModal');
+        const detailContent = document.getElementById('detailContent');
+
+        const details = {
+            ep: {
+                title: 'Employment Pass (EP)',
+                body: `<p><strong>Who:</strong> Professionals, managers and executives with job offers in Singapore.</p>
+                             <p><strong>Key points:</strong> Employer typically applies; minimum qualifying salary and acceptable qualifications required. Pass holder may bring family if meeting income thresholds.</p>
+                             <p><strong>Application:</strong> Online via employer; expect supporting documents: passport, employment contract, academic certificates, employer supporting letter and payslips if applicable.</p>`
+            },
+            s: {
+                title: 'S Pass',
+                body: `<p><strong>Who:</strong> Mid-skilled workers such as technicians and specialists.</p>
+                             <p><strong>Key points:</strong> Employer quota and levies apply. Qualification assessed by salary, qualifications and sector norms.</p>`
+            },
+            wp: {
+                title: 'Work Permit (WP)',
+                body: `<p><strong>Who:</strong> Semi-skilled or unskilled foreign workers in specified sectors.</p>
+                             <p><strong>Key points:</strong> Workplace and sector rules strict; medical and housing obligations may apply.</p>`
+            },
+            entre: {
+                title: 'EntrePass',
+                body: `<p><strong>Who:</strong> Foreign entrepreneurs seeking to start and operate a business in Singapore.</p>
+                             <p><strong>Key points:</strong> Business plan, innovation criteria or qualifying investment needed. Post-approval milestones often required for renewal.</p>`
+            },
+            pep: {
+                title: 'Personalised Employment Pass (PEP)',
+                body: `<p><strong>Who:</strong> High-earning professionals. Not tied to a specific employer.</p>
+                             <p><strong>Key points:</strong> Offers mobility to change jobs without reapplication for the pass; strict income thresholds and eligibility.</p>`
+            },
+            dp: {
+                title: "Dependant's Pass (DP)",
+                body: `<p><strong>Who:</strong> Dependants (spouse, children) of qualifying work pass holders.</p>
+                             <p><strong>Key points:</strong> Work permission may be required separately for DP holders to take up employment.</p>`
+            },
+            ltvp: {
+                title: 'Long-Term Visit Pass (LTVP)',
+                body: `<p><strong>Who:</strong> Certain family members and extended sponsors' families.</p>
+                             <p><strong>Key points:</strong> Issued at discretion; conditions, duration and work eligibility can vary.</p>`
+            },
+            student: {
+                title: 'Student Pass',
+                body: `<p><strong>Who:</strong> International students enrolled full-time at approved institutions.</p>
+                             <p><strong>Key points:</strong> Apply after admission; evidence of funds and institution's confirmation typically required.</p>`
+            }
+        };
+
+        function showDetails(key){
+            const d = details[key];
+            if(!d) return;
+            detailContent.innerHTML = `<h2 style="margin-top:0">${d.title}</h2>${d.body}<p style="color:var(--muted);font-size:13px;margin-top:12px">Note: This is an informational summary. Check official sources for full requirements, fees and application steps.</p>`;
+            detailModal.style.display = 'flex';
+        }
+        function closeDetails(){ detailModal.style.display = 'none'; }
+
+        search.addEventListener('input', ()=> {
+            const q = search.value.trim().toLowerCase();
+            cards.forEach(c=>{
+                const tags = c.dataset.tags || '';
+                const text = (c.innerText || '').toLowerCase();
+                const match = q === '' || tags.includes(q) || text.includes(q);
+                c.style.display = match ? '' : 'none';
+            });
+        });
+        clear.addEventListener('click', ()=> { search.value=''; search.dispatchEvent(new Event('input')); });
+    </script>
+</body>
+</html>
