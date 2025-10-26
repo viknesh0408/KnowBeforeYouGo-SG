@@ -12,4 +12,8 @@
     <loc>https://www.knowbeforeyougo.in/#traveltips</loc>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://www.knowbeforeyougo.in/morepassinfo.html</loc>
+    <priority>0.80</priority>
+  </url>
 </urlset>
