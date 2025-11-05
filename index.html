@@ -278,34 +278,34 @@
   </section>
 
   <!-- Do’s and Don’ts -->
-  <section id="dosdonts" class="container my-5" data-aos="fade-up">
-    <h2 class="section-title">Do’s & Don’ts in Singapore</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <h5 class="text-success"><i class="fa-solid fa-circle-check"></i> Do’s</h5>
-        <ul>
-          <li>Be punctual and respectful.</li>
-          <li>Use public transport responsibly.</li>
-          <li>Keep the environment clean.</li>
-          <li>Stand left on escalators.</li>
-          <li>Respect cultural diversity.</li>
-        </ul>
+  <section id="dosdonts" class="etiquette-section py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title text-center mb-4">Do’s & Don’ts in Singapore</h2>
+    <p class="text-center text-muted mb-4">Good manners & respect are highly valued in Singapore's culture 🇸🇬</p>
+    <div class="row gx-4 gy-3 justify-content-center">
+      <div class="col-md-6 etiquette-box bg-light p-4 rounded shadow-sm">
+        <h4 class="text-success fw-bold mb-3"><i class="fa-solid fa-check-circle me-2"></i>Do’s</h4>
+          <div class="etq-line">✅ Be punctual & respectful to everyone</div>
+          <div class="etq-line">✅ Use public transport responsibly</div>
+          <div class="etq-line">✅ Keep surroundings clean & tidy</div>
+          <div class="etq-line">✅ Stand on the left side of escalators</div>
+          <div class="etq-line">✅ Respect all races, religions & backgrounds</div>
       </div>
-      <div class="col-md-6">
-        <h5 class="text-danger"><i class="fa-solid fa-ban"></i> Don’ts</h5>
-        <ul>
-          <li>Don’t litter or spit.</li>
-          <li>Don’t eat or drink in public transport.</li>
-          <li>Don’t bring illegal chewing gum.</li>
-          <li>Don’t make offensive comments on religion or race.</li>
-        </ul>
+
+      <div class="col-md-6 etiquette-box bg-light p-4 rounded shadow-sm">
+        <h4 class="text-danger fw-bold mb-3"><i class="fa-solid fa-ban me-2"></i>Don'ts</h4>
+          <div class="etq-line dont">❌ Don’t litter or spit in public</div>
+          <div class="etq-line dont">❌ No eating or drinking in MRT & buses</div>
+          <div class="etq-line dont">❌ Don’t import or sell chewing gum illegally</div>
+          <div class="etq-line dont">❌ Avoid public disturbance & loud behavior</div>
+          <div class="etq-line dont">❌ Never make offensive racial or religious remarks</div>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- Advertisement Placeholder
   <div class="ads-placeholder">
-
   </div>   -->
 
 
@@ -339,23 +339,28 @@
     </div>
   </section>
 
+  <!-- contact section button -->
+
+   <div id="contactHint" class="contact-hint">Need help? Contact us 👇</div>
+   <a href="contact.html" class="contact-float-btn" id="contactBtn" alt="enquiry" tooltip="enquiry">
+      <i class="fa-solid fa-headset"></i>
+    </a>
+
+
   <!-- Discussion & Comments Section -->
   <section id="discussion" class="py-5 bg-white" data-aos="fade-up">
     <div class="container">
       <h2 class="text-center text-danger fw-bold mb-4">Share Your Experience & Questions</h2>
       <p class="text-center mb-4 text-muted">Have something to say about Singapore travel, visas, or rules? Leave a
         comment below!</p>
-
       <!-- Giscus comments integration -->
       <script src="https://giscus.app/client.js" data-repo="viknesh0408/KnowBeforeYouGo-SG" data-repo-id="R_kgDOQEaQEg"
         data-category="General" data-category-id="DIC_kwDOQEaQEs4CxTHy" data-mapping="pathname" data-strict="0"
         data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en"
         crossorigin="anonymous" async>
         </script>
-
     </div>
   </section>
-
 
   <!-- Footer -->
   <footer>
@@ -415,10 +420,8 @@
       } catch {
         status.innerHTML = "⚠️ Network error.";
       }
-    });
-    
+    }); 
   </script>
-
 
   <!-- Bootstrap + AOS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -502,5 +505,42 @@ topBtn.addEventListener("click", () => {
 </script>
 <!-- back to top script end -->
 
+
+<!-- do and dont script -->
+  <script>
+    const lines = document.querySelectorAll('.etq-line');
+    window.addEventListener("scroll", () => {
+      lines.forEach((line,i)=>{
+        if(line.getBoundingClientRect().top < window.innerHeight * 0.9){
+          setTimeout(()=> line.style.opacity = "1", i * 80);
+        }
+      });
+    });
+  </script>
+
+  <!-- contact button script -->
+   <script>
+      const contactBtn = document.getElementById("contactBtn");
+      const hint = document.getElementById("contactHint");
+      let hintShown = false;
+
+      window.addEventListener("scroll", () => {
+        const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 600;
+
+        if (nearBottom) {
+          contactBtn.style.display = "inline-block";
+
+          // Show hint once
+          if (!hintShown) {
+            hintShown = true;
+            hint.classList.add("show");
+            setTimeout(()=> hint.classList.remove("show"), 5500);
+          }
+
+        } else {
+          contactBtn.style.display = "none";
+        }
+      });
+    </script>
 </body>
 </html>
