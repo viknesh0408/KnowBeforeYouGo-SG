@@ -87,6 +87,12 @@
         <!-- Before Applying Any Work Pass -->
         <div class="col-lg-4 col-md-6">
           <div class="info-box h-100 p-4 shadow-sm bg-white rounded-4" data-aos="fade-right">
+
+            <!-- Image -->
+            <div class="info-image mb-3 text-center">
+              <img src="Assets/workpassimage.jpg" alt="Workpass Singapore" class="info-img">
+            </div>
+            <!-- title -->
             <div class="d-flex align-items-center mb-3">
               <div class="icon-circle bg-danger text-white me-3">
                 <i class="fa-solid fa-file-signature fa-lg"></i>
@@ -112,6 +118,11 @@
         <!-- After Applying Any Work Pass -->
         <div class="col-lg-4 col-md-6">
           <div class="info-box h-100 p-4 shadow-sm bg-white rounded-4" data-aos="fade-right">
+            <!-- Image -->
+            <div class="info-image mb-3 text-center">
+              <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80"
+                alt="after applying workpass singapore" class="info-img">
+            </div>
             <div class="d-flex align-items-center mb-3">
               <div class="icon-circle bg-danger text-white me-3">
                 <i class="fa-solid fa-briefcase fa-lg"></i>
@@ -146,6 +157,10 @@
         <!-- After Arriving in Singapore -->
         <div class="col-lg-4 col-md-12">
           <div class="info-box h-100 p-4 shadow-sm bg-white rounded-4" data-aos="fade-right">
+            <!-- Image -->
+            <div class="info-image mb-3 text-center">
+              <img src="Assets/afterarriving.jpg" alt="After Arriving Singapore" class="info-img">
+            </div>
             <div class="d-flex align-items-center mb-3">
               <div class="icon-circle bg-danger text-white me-3">
                 <i class="fa-solid fa-plane-arrival fa-lg"></i>
@@ -168,7 +183,7 @@
 
 
 
-  <!-- Visa Section -->
+  <!-- Visa Section
   <section id="visa" class="container my-5">
     <h2 class="section-title">Visa & Entry Information</h2>
     <div class="row g-4">
@@ -201,10 +216,73 @@
       </div>
     </div>
     <!-- More Pass Information -->
-    <div class="more-pass-info" data-aos="fade-up" data-aos-delay="250">
+  <!-- <div class="more-pass-info" data-aos="fade-up" data-aos-delay="250">
       <a href="morepassinfo.html" class="btn btn-danger btn-sm">Show More</a>
+    </div> 
+  </section> -->
+
+  <!-- Visa Section (Carousel Style) -->
+  <!-- Visa Section (Carousel Style With Indicators) -->
+  <section id="visa" class="container my-5">
+    <h2 class="section-title">Visa & Entry Information</h2>
+
+    <div id="visaCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="carousel-inner">
+
+        <!-- Tourist Visa -->
+        <div class="carousel-item active">
+          <div class="card border-0 shadow-lg text-center p-3">
+            <img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a"
+              class="d-block w-100 rounded-4 mb-3" style="height:250px; object-fit:cover;">
+            <h4 class="fw-bold mb-2 text-danger">Tourist Visa</h4>
+            <p>Visa-free for many countries for 30–90 days. Check your visa status on ICA’s website.</p>
+            <a href="https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements" target="_blank"
+              class="btn btn-danger btn-sm">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Employment Pass -->
+        <div class="carousel-item">
+          <div class="card border-0 shadow-lg text-center p-3">
+            <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3"
+              class="d-block w-100 rounded-4 mb-3" style="height:250px; object-fit:cover;">
+            <h4 class="fw-bold mb-2 text-danger">Employment Pass</h4>
+            <p>Foreign professionals must apply for an Employment Pass from MOM.</p>
+            <a href="https://www.mom.gov.sg/passes-and-permits/employment-pass" target="_blank"
+              class="btn btn-danger btn-sm">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Student Pass -->
+        <div class="carousel-item">
+          <div class="card border-0 shadow-lg text-center p-3">
+            <img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg"
+              class="d-block w-100 rounded-4 mb-3" style="height:250px; object-fit:cover;">
+            <h4 class="fw-bold mb-2 text-danger">Student Pass</h4>
+            <p>Foreign students must obtain a Student Pass for full-time education.</p>
+            <a href="https://www.ica.gov.sg/enter-transit-depart/for-students" target="_blank"
+              class="btn btn-danger btn-sm">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#visaCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#visaCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+      </button>
+
+    </div>
+
+    <div class="mt-4 text-center">
+      <a href="morepassinfo.html" class="btn btn-outline-danger btn-sm">Show More Pass Types</a>
     </div>
   </section>
+
 
 
   <!-- Laws Section -->
@@ -295,7 +373,7 @@
         data-category="General" data-category-id="DIC_kwDOQEaQEs4CxTHy" data-mapping="pathname" data-strict="0"
         data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en"
         crossorigin="anonymous" async>
-      </script>
+        </script>
 
     </div>
   </section>
