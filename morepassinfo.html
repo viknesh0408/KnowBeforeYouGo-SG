@@ -267,6 +267,7 @@
 
         /* footer */
         footer {
+            margin-top: 10px;
             background: #212529;
             color: #ccc;
             text-align: center;
@@ -289,15 +290,47 @@
             cursor: pointer;
         }
 
+        /* back to home */
+        .back-to-home{
+            display: none;
+            
+        }
+
+        @media screen and (max-width: 767px) {
+            .back-to-home{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+        }
+
+        @media screen and (min-width: 481px) and (max-width: 767px) {
+             .back-to-home{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+        }
+        @media screen and (max-width: 992px) {
+            .back-to-home{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+        }
+
         /* Ads Placeholder Styling */
-    .ads-placeholder {
-      text-align: center;
-      background: #f8f9fa;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 8px;
-      border: 1px dashed #ccc;
-    }
+        .ads-placeholder {
+        text-align: center;
+        background: #f8f9fa;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 8px;
+        border: 1px dashed #ccc;
+        }
     </style>
 </head>
 
@@ -523,7 +556,11 @@
         </aside>
 
     </div>
-    
+    <!-- Back to Home -->
+    <div class="back-to-home">
+        <a href="index.html" class="btn btn-danger text-center">Back to Home</a>
+    </div>
+
     <!-- Footer -->
   <footer>
     <p>&copy; 2025 KnowBeforeYouGo Singapore | Designed with ❤️ - <a href="https://github.com/viknesh0408/">Viknesh</a></p>
