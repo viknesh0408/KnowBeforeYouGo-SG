@@ -525,17 +525,15 @@ topBtn.addEventListener("click", () => {
       let hintShown = false;
 
       window.addEventListener("scroll", () => {
-        const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 600;
+        const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 700;
 
         if (nearBottom) {
           contactBtn.style.display = "inline-block";
 
-          // Show hint once
-          if (!hintShown) {
-            hintShown = true;
+           // Show hint again every time bottom is reached
             hint.classList.add("show");
-            setTimeout(()=> hint.classList.remove("show"), 5500);
-          }
+            clearTimeout(hint.hideTimeout); // clear old timer if triggered again
+            hint.hideTimeout = setTimeout(()=> hint.classList.remove("show"), 3500);
 
         } else {
           contactBtn.style.display = "none";
