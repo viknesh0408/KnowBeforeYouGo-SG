@@ -12,76 +12,49 @@
     } */
 
 
-  /* laws animation script */
+/* laws animation script */
   
-    // Animate strips when visible
-    const lawBlocks = document.querySelectorAll("[data-law]");
-    const lawSection = document.getElementById("laws");
+  // Animate strips when visible
+  const lawBlocks = document.querySelectorAll("[data-law]");
+  const lawSection = document.getElementById("laws");
 
-    window.addEventListener("scroll", () => {
-      const triggerHeight = window.innerHeight * 0.85;
+  window.addEventListener("scroll", () => {
+    const triggerHeight = window.innerHeight * 0.85;
 
-      lawBlocks.forEach(law => {
-        const top = law.getBoundingClientRect().top;
-        if (top < triggerHeight) law.classList.add("show");
+    lawBlocks.forEach(law => {
+      const top = law.getBoundingClientRect().top;
+      if (top < triggerHeight) law.classList.add("show");
+    });
+
+    // Alert background when section in view
+    const top = lawSection.getBoundingClientRect().top;
+    const bottom = lawSection.getBoundingClientRect().bottom;
+    if (top < window.innerHeight && bottom > 0) {
+      lawSection.classList.add("alert-active");
+    } else {
+      lawSection.classList.remove("alert-active");
+    }
+  });
+
+    // alert sound script
+    
+      let sirenPlayed = false;
+
+      window.addEventListener("scroll", () => {
+        const lawSection = document.getElementById("laws");
+        const pos = lawSection.getBoundingClientRect();
+
+        if (!sirenPlayed && pos.top < window.innerHeight && pos.bottom > 0) {
+          sirenPlayed = true;
+
+          // Play siren sound
+          const audio = document.getElementById("sirenSound");
+          audio.volume = 0.2; // reduce loudness
+          audio.play();
+        }
       });
-
-      // Alert background when section in view
-      const top = lawSection.getBoundingClientRect().top;
-      const bottom = lawSection.getBoundingClientRect().bottom;
-      if (top < window.innerHeight && bottom > 0) {
-        lawSection.classList.add("alert-active");
-      } else {
-        lawSection.classList.remove("alert-active");
-      }
-    });
-  
-      // alert sound script
-      
-        let sirenPlayed = false;
-
-        window.addEventListener("scroll", () => {
-          const lawSection = document.getElementById("laws");
-          const pos = lawSection.getBoundingClientRect();
-
-          if (!sirenPlayed && pos.top < window.innerHeight && pos.bottom > 0) {
-            sirenPlayed = true;
-
-            // Play siren sound
-            const audio = document.getElementById("sirenSound");
-            audio.volume = 0.2; // reduce loudness
-            audio.play();
-          }
-        });
-      // alert sound script ends
-  /* laws animation script ends */
-
-
-   /*back to top script */
-    const topBtn = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 350) {
-        topBtn.classList.add("show");
-      } else {
-        topBtn.classList.remove("show");
-      }
-    });
-
-    topBtn.addEventListener("click", () => {
-      topBtn.classList.add("launching");
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
-      // Reset rocket animation after scroll
-      setTimeout(() => {
-        topBtn.classList.remove("launching");
-      }, 1000);
-    });
-/* back to top script end */
+    // alert sound script ends
+/* laws animation script ends */
 
 
 /* do and dont script */
@@ -96,6 +69,22 @@
 /* do and dont script ends */
 
 
+/* travel tips animation script */
+    const tips = document.querySelectorAll(".tip-card");
+    window.addEventListener("scroll", () => {
+      const trigger = window.innerHeight * 0.9;
+      tips.forEach((tip, i) => {
+        if (tip.getBoundingClientRect().top < trigger) {
+          tip.style.opacity = "1";
+          tip.style.transform = "translateY(0)";
+          tip.style.transitionDelay = `${i * 0.1}s`;
+        }
+      });
+    });
+/* travel tips animation script ends */
+
+
+
 /* contact button script */
       const contactBtn = document.getElementById("contactBtn");
       const hint = document.getElementById("contactHint");
@@ -103,7 +92,6 @@
 
       window.addEventListener("scroll", () => {
         const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 700;
-        const nearTop = window.innerHeight + window.scrollY >= document.body.offsetHeight - 701;
 
         if (nearBottom) {
           contactBtn.style.display = "inline-block";
@@ -121,22 +109,53 @@
       });
 /* contact button script ends */
 
+/*back to top script */
+  const topBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 350) {
+      topBtn.classList.add("show");
+    } else {
+      topBtn.classList.remove("show");
+    }
+  });
+
+  topBtn.addEventListener("click", () => {
+    topBtn.classList.add("launching");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+    // Reset rocket animation after scroll
+    setTimeout(() => {
+      topBtn.classList.remove("launching");
+    }, 1000);
+  });
+/* back to top script end */
 
 
-/* travel tips animation script */
-      const tips = document.querySelectorAll(".tip-card");
-      window.addEventListener("scroll", () => {
-        const trigger = window.innerHeight * 0.9;
-        tips.forEach((tip, i) => {
-          if (tip.getBoundingClientRect().top < trigger) {
-            tip.style.opacity = "1";
-            tip.style.transform = "translateY(0)";
-            tip.style.transitionDelay = `${i * 0.1}s`;
-          }
-        });
-      });
-/* travel tips animation script ends */
 
+// sticky mini navbar script
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(sec => {
+    const sectionTop = sec.offsetTop;
+    if (scrollY >= sectionTop - 100) {
+      current = sec.getAttribute("id");
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+// sticky mini navbar script ends
   
 
 
