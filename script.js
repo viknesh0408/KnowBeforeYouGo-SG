@@ -36,24 +36,6 @@
     }
   });
 
-    // alert sound script
-    
-      let sirenPlayed = false;
-
-      window.addEventListener("scroll", () => {
-        const lawSection = document.getElementById("laws");
-        const pos = lawSection.getBoundingClientRect();
-
-        if (!sirenPlayed && pos.top < window.innerHeight && pos.bottom > 0) {
-          sirenPlayed = true;
-
-          // Play siren sound
-          const audio = document.getElementById("sirenSound");
-          audio.volume = 0.2; // reduce loudness
-          audio.play();
-        }
-      });
-    // alert sound script ends
 /* laws animation script ends */
 
 
