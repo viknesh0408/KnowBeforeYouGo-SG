@@ -419,11 +419,10 @@
 
     /* Ads Placeholder Styling */
     .ads-placeholder {
-      width: 100%;
       text-align: center;
       background: #f8f9fa;
-      padding: 25px;
-      margin: 20px 20px;
+      padding: 15px;
+      margin: 20px 0;
       border-radius: 8px;
       border: 1px dashed #ccc;
     }
