@@ -118,26 +118,3 @@
 /* back to top script end */
 
 
-
-// sticky mini navbar script
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach(sec => {
-    const sectionTop = sec.offsetTop;
-    if (scrollY >= sectionTop - 100) {
-      current = sec.getAttribute("id");
-    }
-  });
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
-// sticky mini navbar script ends
-  
-
-
