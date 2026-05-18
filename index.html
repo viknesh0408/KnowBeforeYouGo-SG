@@ -183,6 +183,15 @@ nav.scrolled{background:rgba(13,27,42,.96);backdrop-filter:blur(20px);border-bot
 .hcard-tag{display:inline-block;background:rgba(217,43,43,.18);color:#FF9090;font-size:.68rem;font-weight:700;padding:4px 11px;border-radius:99px;margin-top:16px;letter-spacing:.06em;text-transform:uppercase}
 .hcard-tag.ok{background:rgba(74,222,128,.12);color:#6EE7A0}
 
+/* Card flip animation */
+@keyframes cardFlip{
+  0%{opacity:1;transform:rotateY(0deg)}
+  50%{opacity:0;transform:rotateY(90deg)}
+  50.1%{opacity:0;transform:rotateY(-90deg)}
+  100%{opacity:1;transform:rotateY(0deg)}
+}
+.hcard.flipping{animation:cardFlip .8s ease-in-out !important;transform-style:preserve-3d}
+
 /* ══ SECTION DIVIDER ══ */
 .sdiv{height:1px;background:linear-gradient(90deg,transparent 0%,rgba(217,43,43,.5) 30%,rgba(217,43,43,.5) 70%,transparent 100%);position:relative}
 .sdiv::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:var(--red);border-radius:50%;box-shadow:0 0 20px var(--red-glow)}
@@ -482,18 +491,18 @@ footer{background:#050C14;padding:36px 5%;display:flex;align-items:center;justif
     </div>
     <div class="hero-visual">
       <div class="hstack">
-        <div class="hcard hcard-1">
+        <div class="hcard hcard-1" data-index="0">
           <div class="hcard-ico">📋</div>
           <div class="hcard-t">Check your IPA carefully</div>
           <div class="hcard-s">Salary, company & occupation must match exactly what was promised.</div>
         </div>
-        <div class="hcard hcard-2">
+        <div class="hcard hcard-2" data-index="1">
           <div class="hcard-ico">⚠️</div>
           <div class="hcard-t">Don't work on a visit pass</div>
           <div class="hcard-s">Even one day is a criminal offence under Singapore law.</div>
           <span class="hcard-tag">Critical</span>
         </div>
-        <div class="hcard hcard-3">
+        <div class="hcard hcard-3" data-index="2">
           <div class="hcard-ico">✅</div>
           <div class="hcard-t">Approval in ~1 working day</div>
           <div class="hcard-s">Work Permits are fast. Check status anytime on MOM's portal.</div>
@@ -895,6 +904,69 @@ const obs=new IntersectionObserver(entries=>{
   });
 },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+/* Hero card rotation */
+const heroTips=[
+  {ico:'📋',title:'Check your IPA carefully',desc:'Salary, company & occupation must match exactly what was promised.',tag:'',tagClass:''},
+  {ico:'⚠️',title:"Don't work on a visit pass",desc:'Even one day is a criminal offence under Singapore law.',tag:'Critical',tagClass:''},
+  {ico:'✅',title:'Approval in ~1 working day',desc:"Work Permits are fast. Check status anytime on MOM's portal.",tag:'Tip',tagClass:'ok'},
+  {ico:'🏥',title:'Keep emergency contacts saved',desc:'Police (999), Ambulance (995), MOM (6438 5122) - save these numbers immediately.',tag:'Safety',tagClass:''},
+  {ico:'💼',title:'Know your employment contract',desc:'Review salary, benefits, deductions, and notice periods before signing anything.',tag:'Important',tagClass:''},
+  {ico:'🛂',title:'Never carry packages for strangers',desc:'Drug trafficking carries mandatory death penalty. Never accept packages or favors.',tag:'Critical',tagClass:''},
+];
+
+let currentTipIndex=0;
+let isAnimating=false;
+
+function rotateHeroCards(){
+  if(isAnimating) return;
+  isAnimating=true;
+  
+  const cards=document.querySelectorAll('.hcard');
+  
+  // Flip each card in sequence with stagger
+  cards.forEach((card,cardIdx)=>{
+    setTimeout(()=>{
+      // Remove and re-add to restart animation
+      card.classList.remove('flipping');
+      void card.offsetWidth; // Force reflow
+      card.classList.add('flipping');
+      
+      // Update content at the middle of the flip (opacity 0)
+      setTimeout(()=>{
+        const nextIdx=(currentTipIndex+1+cardIdx)%heroTips.length;
+        const nextTip=heroTips[nextIdx];
+        card.querySelector('.hcard-ico').textContent=nextTip.ico;
+        card.querySelector('.hcard-t').textContent=nextTip.title;
+        card.querySelector('.hcard-s').textContent=nextTip.desc;
+        const tagEl=card.querySelector('.hcard-tag');
+        if(!tagEl) return;
+        if(nextTip.tag){
+          tagEl.textContent=nextTip.tag;
+          tagEl.className='hcard-tag';
+          if(nextTip.tagClass){tagEl.classList.add(nextTip.tagClass);}
+          tagEl.style.display='inline-block';
+        }else{
+          tagEl.style.display='none';
+        }
+      },400); // Half of 800ms animation
+      
+      // Remove animation class after complete
+      setTimeout(()=>{
+        card.classList.remove('flipping');
+      },800);
+    }, cardIdx*150); // 150ms stagger between each card
+  });
+  
+  // Update index after first card starts flipping
+  setTimeout(()=>{
+    currentTipIndex=(currentTipIndex+1)%heroTips.length;
+    isAnimating=false;
+  },800);
+}
+
+setInterval(rotateHeroCards,7000);
+
 
 /* Language toggle dropdown */
 function toggleLang(){const drop=document.getElementById('langDrop');drop.classList.toggle('open');}
