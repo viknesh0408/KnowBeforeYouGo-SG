@@ -209,7 +209,6 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40)
 const hbg=document.getElementById('hbg'),nl=document.getElementById('navLinks');
 hbg.addEventListener('click',()=>{nl.classList.toggle('open');hbg.classList.toggle('active');});
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');hbg.classList.remove('active');}));
-function toggleLang(){document.getElementById('langDrop').classList.toggle('open');}
 document.addEventListener('click',(e)=>{if(!e.target.closest('.lang-drop'))document.getElementById('langDrop').classList.remove('open');});
 </script>
 </body>

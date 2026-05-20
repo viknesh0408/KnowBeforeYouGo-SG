@@ -1,9 +1,9 @@
-// Content Loader - Integrates admin data into main site pages
+// Content Loader - Loads site content from localStorage
 // Include this script in all pages: <script src="js/content-loader.js"></script>
 
 (function() {
-  // Load admin content and update page elements
-  function loadAdminContent() {
+  // Load content from localStorage and update page elements
+  function loadSiteContent() {
     const content = getAllContent();
     
     if (!content) return;
@@ -164,10 +164,10 @@
       emailEl.textContent = contact.email;
     }
     
-    // Phone
-    const phoneEl = document.querySelector('[href*="tel"]') || 
+    // Phone - skip if contains placeholder XXXX
+    const phoneEl = document.querySelector('[href*="tel"]') ||
                     document.querySelector('[class*="phone"]');
-    if (phoneEl) {
+    if (phoneEl && contact.phone && !contact.phone.includes('XXXX')) {
       phoneEl.href = `tel:${contact.phone.replace(/\s/g, '')}`;
       phoneEl.textContent = contact.phone;
     }
@@ -206,7 +206,7 @@
     // This is limited to avoid breaking custom navigation
     if (nav.links && nav.links.length > 0) {
       // Silently update internal tracking (don't modify DOM to avoid breaking JS)
-      window.adminNavLinks = nav.links;
+      window.siteNavLinks = nav.links;
     }
   }
   
@@ -244,7 +244,7 @@
     loadAdminContent();
   }
   
-  // Also load when storage changes (if admin is open in another tab)
+  // Also load when storage changes
   window.addEventListener('storage', function(e) {
     if (e.key === 'siteContent') {
       loadAdminContent();
