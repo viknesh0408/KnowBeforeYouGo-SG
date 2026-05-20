@@ -35,13 +35,14 @@ nav.scrolled{background:rgba(13,27,42,.96);backdrop-filter:blur(20px);border-bot
 .lang-drop{position:relative;margin-left:8px;z-index:250;overflow:visible}
 .lang-drop-toggle{background:linear-gradient(135deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.03) 100%);border:1.5px solid rgba(255,255,255,.12);color:#fff;padding:6px 14px;border-radius:8px;font-size:.75rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .3s ease;backdrop-filter:blur(10px);position:relative}
 .lang-drop-toggle .chevron{font-size:.55rem;margin-left:2px;transition:transform .3s ease;opacity:.8}
-.lang-drop-menu{position:absolute;top:calc(100% + 10px);right:0;background:linear-gradient(180deg,rgba(22,33,50,.98) 0%,rgba(17,31,46,.98) 100%);border:1px solid rgba(255,255,255,.12);border-radius:14px;min-width:140px;box-shadow:0 16px 48px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.03) inset;opacity:0;visibility:hidden;transform:translateY(-8px) scale(.96);transition:all .25s cubic-bezier(.34,1.56,.64,1);z-index:9999}
+.lang-drop-menu{position:absolute;top:calc(100% + 6px);right:0;background:rgba(13,27,42,.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:10px;min-width:130px;box-shadow:0 8px 32px rgba(0,0,0,.3);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.95);transition:all .25s ease;z-index:100}
 .lang-drop.open .lang-drop-menu{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
-.lang-drop-item{display:block;padding:13px 18px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem;font-weight:500;transition:all .2s;position:relative}
-.lang-drop-item:first-child{border-radius:13px 13px 0 0}
-.lang-drop-item:last-child{border-radius:0 0 13px 13px}
-.lang-drop-item:hover{background:linear-gradient(90deg,rgba(217,43,43,.15) 0%,rgba(217,43,43,.08) 100%);color:#fff;padding-left:22px}
-.lang-drop-item.active{background:linear-gradient(90deg,var(--red) 0%,#b91c1c 100%);color:#fff;box-shadow:0 2px 12px rgba(217,43,43,.3) inset}
+.lang-drop-item{display:block;padding:10px 14px;color:rgba(255,255,255,.6);text-decoration:none;font-size:.8rem;font-weight:500;transition:all .2s ease;position:relative;overflow:hidden}
+.lang-drop-item::before{content:'';position:absolute;left:0;top:0;width:0;height:100%;background:rgba(217,43,43,.1);transition:width .3s ease;z-index:-1}
+.lang-drop-item:hover::before{width:100%}
+.lang-drop-item:first-child{border-radius:9px 9px 0 0}
+.lang-drop-item:last-child{border-radius:0 0 9px 9px}
+.lang-drop-item:hover{color:#fff;background:rgba(217,43,43,.15)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px 4px;z-index:300}
 .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s var(--ease)}
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -115,7 +116,7 @@ footer{background:#050C14;padding:36px 5%;display:flex;justify-content:space-bet
       <li><a href="../singapore_laws.html">Laws</a></li>
       <li><a href="../index.html#traveltips">Travel Tips</a></li>
       <li><a href="../contact.html" class="nav-cta">Contact</a></li>
-      <li><div class="lang-drop" id="langDrop"><button class="lang-drop-toggle" onclick="toggleLang()">EN <span class="chevron">▾</span></button><div class="lang-drop-menu"><a href="#" class="lang-drop-item active" onclick="changeLang('en');return false;">English</a><a href="#" class="lang-drop-item" onclick="changeLang('ta');return false;">Tamil தமிழ்</a></div></div></li>
+      <li><div class="lang-drop" id="langDrop"><button class="lang-drop-toggle" onclick="toggleLang()"><i class="bi bi-globe"></i><span id="langLabel">EN</span><span class="chevron">▾</span></button><div class="lang-drop-menu"><a href="#" class="lang-drop-item active" id="langEnItem" onclick="changeLang('en');return false;">English</a><a href="#" class="lang-drop-item" id="langTaItem" onclick="changeLang('ta');return false;">Tamil தமிழ்</a></div></div></li>
     </ul>
     <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
   </div>
@@ -187,7 +188,7 @@ footer{background:#050C14;padding:36px 5%;display:flex;justify-content:space-bet
 </article>
 
 <div style="text-align:center">
-<a href="./index.html" class="back-btn"><i class="bi bi-arrow-left"></i> Back to Blog</a>
+<a href="./blogindex.html" class="back-btn"><i class="bi bi-arrow-left"></i> Blog Index</a>
 </div>
 
 <div class="sdiv"></div>
@@ -201,6 +202,7 @@ footer{background:#050C14;padding:36px 5%;display:flex;justify-content:space-bet
   <div class="fcopy">© 2026 KnowBeforeYouGo</div>
 </footer>
 
+<script src="../js/translations.js"></script>
 <script>
 const nav=document.getElementById('mainnav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});

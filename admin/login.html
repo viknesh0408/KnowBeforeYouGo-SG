@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | KnowBeforeYouGo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="icon" type="image/png" href="../Assets/logo.png">
+  <link rel="stylesheet" href="css/admin.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+    }
+
+    .login-card {
+      background: var(--navy-l);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--r);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .login-logo {
+      font-family: var(--fd);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .login-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      text-align: left;
+    }
+
+    .forgot-password-link {
+      display: block;
+      text-align: right;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .forgot-password-link a {
+      color: var(--gold);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .forgot-password-link a:hover {
+      text-decoration: underline;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .login-button:hover {
+      background: var(--red-l);
+      box-shadow: 0 4px 12px var(--red-glow);
+    }
+
+    .error-message {
+      display: none;
+      background: rgba(220, 38, 38, 0.15);
+      border: 1px solid rgba(220, 38, 38, 0.3);
+      color: #ff8888;
+      padding: 0.75rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .error-message.active {
+      display: block;
+    }
+
+    .success-message {
+      display: none;
+      background: rgba(22, 163, 74, 0.15);
+      border: 1px solid rgba(22, 163, 74, 0.3);
+      color: #86efac;
+      padding: 0.75rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .success-message.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-logo">
+        <i class="bi bi-shield-lock"></i> Admin
+      </div>
+      <p class="login-subtitle">Content Management System</p>
+
+      <div id="loginSection">
+        <div class="error-message" id="errorMessage"></div>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" required>
+          </div>
+
+          <div class="forgot-password-link">
+            <a onclick="showForgotPassword()">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="login-button">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </button>
+        </form>
+      </div>
+
+      <div id="forgotPasswordSection" style="display: none;">
+        <div class="success-message" id="successMessage"></div>
+        <div class="error-message" id="forgotErrorMessage"></div>
+        
+        <h3 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 1.1rem;">Reset Password</h3>
+        
+        <form id="forgotPasswordForm">
+          <div class="form-group">
+            <label for="forgotUsername">Username</label>
+            <input type="text" id="forgotUsername" placeholder="Enter your username" required>
+          </div>
+
+          <button type="submit" class="login-button" style="width: 100%;">
+            <i class="bi bi-send"></i> Send Reset Link
+          </button>
+
+          <button type="button" class="login-button" onclick="showLogin()" style="width: 100%; background: var(--navy-ll); color: var(--gold); border: 1px solid var(--gold); margin-top: 1rem;">
+            Back to Login
+          </button>
+        </form>
+      </div>
+
+      <div id="resetPasswordSection" style="display: none;">
+        <div class="success-message" id="resetSuccessMessage"></div>
+        <div class="error-message" id="resetErrorMessage"></div>
+        
+        <h3 style="color: var(--gold); margin-bottom: 1.5rem; font-size: 1.1rem;">Create New Password</h3>
+        
+        <form id="resetPasswordForm">
+          <div class="form-group">
+            <label for="newPassword">New Password</label>
+            <input type="password" id="newPassword" placeholder="Enter new password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+          </div>
+
+          <button type="submit" class="login-button">
+            <i class="bi bi-check-circle"></i> Reset Password
+          </button>
+
+          <button type="button" class="login-button" onclick="showLogin()" style="width: 100%; background: var(--navy-ll); color: var(--gold); border: 1px solid var(--gold); margin-top: 1rem;">
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for reset token display -->
+  <div id="resetTokenModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 500px;">
+      <div class="modal-header">
+        <h2>Password Reset Link</h2>
+        <button class="modal-close" onclick="closeTokenModal()">&times;</button>
+      </div>
+      <div style="color: var(--muted); margin-bottom: 1.5rem;">
+        <p>A password reset link has been generated. Use this link to reset your password:</p>
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; margin: 1rem 0; word-break: break-all;">
+          <code id="resetTokenDisplay" style="color: var(--gold);"></code>
+        </div>
+        <p style="font-size: 0.85rem; margin-top: 1rem;">
+          This link will expire in 30 minutes. Click the button below to proceed with password reset.
+        </p>
+      </div>
+      <button type="button" class="btn-admin btn-primary" onclick="proceedToReset()" style="width: 100%; justify-content: center;">
+        <i class="bi bi-check-circle"></i> Proceed to Reset Password
+      </button>
+      <button type="button" class="btn-admin btn-secondary" onclick="closeTokenModal()" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/storage.js"></script>
+  <script>
+    let currentResetToken = null;
+
+    // Login form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMsg = document.getElementById('errorMessage');
+
+      const result = login(username, password);
+      
+      if (result.success) {
+        window.location.href = 'dashboard.html';
+      } else {
+        errorMsg.textContent = result.error;
+        errorMsg.classList.add('active');
+        document.getElementById('password').value = '';
+      }
+    });
+
+    // Forgot password form submission
+    document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('forgotUsername').value;
+      const errorMsg = document.getElementById('forgotErrorMessage');
+      const successMsg = document.getElementById('successMessage');
+
+      errorMsg.classList.remove('active');
+      successMsg.classList.remove('active');
+
+      const result = generateResetToken(username);
+      
+      if (result.success) {
+        currentResetToken = result.token;
+        document.getElementById('resetTokenDisplay').textContent = result.token;
+        document.getElementById('resetTokenModal').classList.add('active');
+      } else {
+        errorMsg.textContent = result.error;
+        errorMsg.classList.add('active');
+      }
+    });
+
+    // Reset password form submission
+    document.getElementById('resetPasswordForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const newPassword = document.getElementById('newPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const errorMsg = document.getElementById('resetErrorMessage');
+      const successMsg = document.getElementById('resetSuccessMessage');
+
+      errorMsg.classList.remove('active');
+      successMsg.classList.remove('active');
+
+      if (newPassword !== confirmPassword) {
+        errorMsg.textContent = 'Passwords do not match';
+        errorMsg.classList.add('active');
+        return;
+      }
+
+      const result = resetPassword(currentResetToken, newPassword);
+      
+      if (result.success) {
+        successMsg.textContent = 'Password reset successfully! Redirecting to login...';
+        successMsg.classList.add('active');
+        setTimeout(() => {
+          showLogin();
+          document.getElementById('username').value = '';
+          document.getElementById('password').value = '';
+        }, 2000);
+      } else {
+        errorMsg.textContent = result.error;
+        errorMsg.classList.add('active');
+      }
+    });
+
+    function showForgotPassword() {
+      document.getElementById('loginSection').style.display = 'none';
+      document.getElementById('forgotPasswordSection').style.display = 'block';
+      document.getElementById('resetPasswordSection').style.display = 'none';
+    }
+
+    function showLogin() {
+      document.getElementById('loginSection').style.display = 'block';
+      document.getElementById('forgotPasswordSection').style.display = 'none';
+      document.getElementById('resetPasswordSection').style.display = 'none';
+      document.getElementById('errorMessage').classList.remove('active');
+      document.getElementById('forgotErrorMessage').classList.remove('active');
+    }
+
+    function proceedToReset() {
+      document.getElementById('resetTokenModal').classList.remove('active');
+      document.getElementById('loginSection').style.display = 'none';
+      document.getElementById('forgotPasswordSection').style.display = 'none';
+      document.getElementById('resetPasswordSection').style.display = 'block';
+    }
+
+    function closeTokenModal() {
+      document.getElementById('resetTokenModal').classList.remove('active');
+      showForgotPassword();
+    }
+  </script>
+</body>
+</html>

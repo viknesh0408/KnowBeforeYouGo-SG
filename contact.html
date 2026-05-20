@@ -245,7 +245,7 @@ footer{background:#020617;padding:50px 5%;text-align:center;position:relative;z-
 </style>
 </head>
 <body>
-<nav id="mainnav"><div class="nav-i"><a href="index.html" class="nav-logo"><img src="Assets/logo.png" alt="Logo" style="height:28px;width:auto;" loading="lazy" decoding="async">&nbsp;KnowBeforeYouGo</a><ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="index.html#information">Work Pass</a></li><li><a href="index.html#visa">Visa</a></li><li><a href="singapore_laws.html">Laws</a></li><li><a href="index.html#traveltips">Travel Tips</a></li><li><div class="lang-drop" id="langDrop"><button class="lang-drop-toggle" onclick="toggleLang(); return false;"><i class="bi bi-globe"></i><span id="langLabel">EN</span><span class="chevron">▾</span></button><div class="lang-drop-menu"><a href="#" class="lang-drop-item active" id="langEnItem" onclick="changeLang('en'); return false;">English</a><a href="#" class="lang-drop-item" id="langTaItem" onclick="changeLang('ta'); return false;">Tamil தமிழ்</a></div></div></li></ul><button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<nav id="mainnav"><div class="nav-i"><a href="index.html" class="nav-logo"><img src="Assets/logo.png" alt="Logo" style="height:28px;width:auto;" loading="lazy" decoding="async">&nbsp;KnowBeforeYouGo</a><ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="index.html#information">Work Pass</a></li><li><a href="index.html#visa">Visa</a></li><li><a href="singapore_laws.html">Laws</a></li><li><a href="index.html#traveltips">Travel Tips</a></li><li><a href="blog/blogindex.html">Blog</a></li><li><div class="lang-drop" id="langDrop"><button class="lang-drop-toggle" onclick="toggleLang(); return false;"><i class="bi bi-globe"></i><span id="langLabel">EN</span><span class="chevron">▾</span></button><div class="lang-drop-menu"><a href="#" class="lang-drop-item active" id="langEnItem" onclick="changeLang('en'); return false;">English</a><a href="#" class="lang-drop-item" id="langTaItem" onclick="changeLang('ta'); return false;">Tamil தமிழ்</a></div></div></li></ul><button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
 <section class="hero-page"><div class="hero-bg"></div><div class="hero-grid"></div><div class="hero-glow"></div><div class="hero-inner"><div class="htag">Get Help</div><h1>Contact <em>Us</em></h1><p class="hero-sub">Have questions? We're here to help with visa, passes, laws, or any concerns about Singapore.</p><div class="hbtns"><a href="#contact" class="btn-p"><i class="bi bi-chat-dots"></i> Send Message</a><a href="#emergency" class="btn-g"><i class="bi bi-telephone"></i> Emergency Numbers</a></div></div></section>
 <div class="sdiv"></div>
 
@@ -463,7 +463,7 @@ footer{background:#020617;padding:50px 5%;text-align:center;position:relative;z-
   </script>
 </div>
 
-<footer><div class="fl">🇸🇬 KnowBeforeYouGo</div><ul class="flinks"><li><a href="index.html">Home</a></li><li><a href="index.html#visa">Visa</a></li><li><a href="singapore_laws.html">Laws</a></li><li><a href="more_pass_info.html">Passes</a></li><li><a href="contact.html">Contact</a></li></ul><div class="fcopy">© 2026 KnowBeforeYouGo Singapore · Built to help Tamil-speaking workers and travelers</div></footer>
+<footer><div class="fl">🇸🇬 KnowBeforeYouGo</div><ul class="flinks"><li><a href="index.html">Home</a></li><li><a href="index.html#visa">Visa</a></li><li><a href="singapore_laws.html">Laws</a></li><li><a href="more_pass_info.html">Passes</a></li><li><a href="contact.html">Contact</a></li><li><a href="admin/login.html" style="color: rgba(201, 148, 58, 0.6); font-size: 0.75rem;"><i class="bi bi-shield-lock"></i> Admin</a></li></ul><div class="fcopy">© 2026 KnowBeforeYouGo Singapore · Built to help Tamil-speaking workers and travelers</div></footer>
 <script>
 const nav=document.getElementById('mainnav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
@@ -584,5 +584,6 @@ form.addEventListener('submit',async function(e){
   }
 });
 </script>
+<script src="js/content-loader.js"></script>
 </body>
 </html>

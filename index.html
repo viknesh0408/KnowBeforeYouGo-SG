@@ -461,7 +461,7 @@ footer{background:#050C14;padding:36px 5%;display:flex;align-items:center;justif
       <li><a href="#laws">Laws</a></li>
       <li><a href="#dosdonts">Do's &amp; Don'ts</a></li>
       <li><a href="#traveltips">Travel Tips</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="blog/blogindex.html">Blog</a></li>
       <li><a href="contact.html" class="nav-cta">Contact</a></li>
       <li><div class="lang-drop" id="langDrop"><button class="lang-drop-toggle" onclick="toggleLang(); return false;"><i class="bi bi-globe"></i><span id="langLabel">EN</span><span class="chevron">▾</span></button><div class="lang-drop-menu"><a href="#" class="lang-drop-item active" id="langEnItem" onclick="changeLang('en'); return false;">English</a><a href="#" class="lang-drop-item" id="langTaItem" onclick="changeLang('ta'); return false;">Tamil தமிழ்</a></div></div></li>
     </ul>
@@ -873,6 +873,7 @@ footer{background:#050C14;padding:36px 5%;display:flex;align-items:center;justif
     <li><a href="#laws">Laws</a></li>
     <li><a href="#dosdonts">Do's &amp; Don'ts</a></li>
     <li><a href="contact.html">Contact</a></li>
+    <li><a href="admin/login.html" style="color: rgba(201, 148, 58, 0.6); font-size: 0.75rem;"><i class="bi bi-shield-lock"></i> Admin</a></li>
   </ul>
   <div class="fcopy">© 2025 KnowBeforeYouGo Singapore · Built by Viknesh</div>
 </footer>
@@ -1052,5 +1053,6 @@ localStorage.setItem('preferredLang',lang);}
 document.addEventListener('click',function(e){const drop=document.getElementById('langDrop');if(!drop.contains(e.target)&&!e.target.closest('.lang-drop')){drop.classList.remove('open');}});
 window.addEventListener('DOMContentLoaded',()=>{storeOriginalContent();const saved=localStorage.getItem('preferredLang')||'en';if(saved==='ta'){changeLang('ta');}else{changeLang('en');}});
 </script>
+<script src="js/content-loader.js"></script>
 </body>
 </html>
