@@ -9,7 +9,7 @@ const translations = {
     'Work Pass': 'பணி பாஸ்',
     'Visa': 'விசா',
     'Laws': 'சட்டங்கள்',
-    "Do's & Don'ts": "செய்வதை & செய்யாது",
+    "Do's & Don'ts": "செய்வதும், செய்யக்கூடாததும்",
     'Travel Tips': 'பயண குறிப்புகள்',
     'Contact': 'தொடர்பு',
     'Home': 'முகப்பு',
@@ -41,10 +41,10 @@ const translations = {
     'Smoking restrictions': 'புகைபிடிப்பதற்கான கட்டுப்பாடுகள்',
     'Only permitted in designated smoking zones. Lighting up anywhere else is an on-the-spot fine. No exceptions for tourists or new arrivals.': 'குறிப்பிட்ட புகைபிடிப்பு பகுதிகளில் மட்டுமே அனுமதி. வேறு எங்கு வேண்டுமானாலும் புகைபிடித்தல் உடனடி அபராதம். சுற்றுலா பயணிகள் அல்லது புதிய வருகையாளர்களுக்கு விதிவிலக்கு இல்லை.',
     'Littering & vandalism': 'குப்பைக்கூடு & சொத்து சேதம்',
-    'First-time litter fines reach SGD 2,000. Corrective work orders may also apply. Vandalism can result in caning and imprisonment.': 'முதல் முறை குப்பை கூடு அபராதம் SGD 2,000 வரை இருக்கலாம். சரி செய்யும் வேலை உத்தரவுகள் பொருந்தக்கூடும். சொத்து சேதம் காரணமாக கடுமையான தண்டனை ஏற்படலாம.',
-    'Chewing gum': 'மசக்க gum',
-    'Chewing gum is banned in Singapore. Importing or chewing it can result in fines.': 'சிங்கப்பூரில் மசக்க gum தடைசெய்யப்பட்டது. இதை இறக்குமதி செய்வதோ அல்லது nibbling செய்வதோ அபராதத்திற்கு காரணமாகலாம.',
-    "Do's & Don'tts": 'செய்வதை & செய்யாது',
+    'First-time litter fines reach SGD 2,000. Corrective work orders may also apply. Vandalism can result in caning and imprisonment.': 'முதல் முறை குப்பை கூடு அபராதம் SGD 2,000 வரை இருக்கலாம். சரி செய்யும் வேலை உத்தரவுகள் கூட விதிக்கப்படலாம். சொத்து சேதம் கைது மற்றும் சிறை தண்டனைகளுக்குக் காரணமாகும்.',
+    'Chewing gum': 'சீக்கிங் கம்பு',
+    'Chewing gum is banned in Singapore. Importing or chewing it can result in fines.': 'சிங்கப்பூரில் சீக்கிங் கம்பு தடை செய்யப்பட்டு உள்ளது. இதை இறக்குமதிசெய்வதோ அல்லது சீக்குதல் எனினும் அபராதத்திற்கு வழிவகுக்கும்.',
+    "Do's & Don'ts": 'செய்வதும், செய்யக்கூடாததும்',
     'Essential guidelines for behaving properly in Singapore.': 'சிங்கப்பூரில் சரியாக நடந்துக்கொள்வதற்கான அவசியமான வழிமுறைகள்.',
 
     // Travel Tips
