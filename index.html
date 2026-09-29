@@ -126,6 +126,7 @@ nav.scrolled{background:rgba(13,27,42,.96);backdrop-filter:blur(20px);border-bot
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-actions{display:flex;align-items:center;gap:12px}
 
 /* Mobile Responsive Navbar */
 @media(max-width:1024px){
@@ -142,11 +143,12 @@ nav.scrolled{background:rgba(13,27,42,.96);backdrop-filter:blur(20px);border-bot
   .nav-links a{padding:14px 0;font-size:.95rem;width:100%;display:block}
   .hamburger{display:flex}
   .nav-cta{padding:14px 24px!important;font-size:.85rem!important;align-self:flex-start;margin-top:10px;width:100%;text-align:center}
-  .lang-drop{margin-left:0;margin-top:10px;width:100%}
-  .lang-drop-toggle{width:100%;justify-content:center}
-  .lang-drop-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) scale(.95);right:auto}
-  .lang-drop.open .lang-drop-menu{transform:translateX(-50%) scale(1)}
+  .lang-drop{margin:0;width:auto}
+  .lang-drop-toggle{width:auto;justify-content:center}
+  .lang-drop-menu{position:absolute;top:calc(100% + 8px);right:0;left:auto;transform:translateY(-8px) scale(.95)}
+  .lang-drop.open .lang-drop-menu{transform:translateY(0) scale(1)}
 }
+@media(max-width:360px){.nav-logo{font-size:1rem;gap:6px}.nav-actions{gap:8px}.lang-drop-toggle{padding-inline:8px}}
 
 /* ══ HERO ══ */
 .hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;position:relative;overflow:hidden;padding:130px 5% 100px}
@@ -449,9 +451,11 @@ footer{background:#050C14;padding:36px 5%;display:flex;align-items:center;justif
       <li><a href="#dosdonts">Do's &amp; Don'ts</a></li>
       <li><a href="#traveltips">Travel Tips</a></li>
       <li><a href="contact.html" class="nav-cta">Contact</a></li>
-      <li><div class="lang-drop" id="langDrop"><button class="lang-drop-toggle" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(); return false;"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg><span id="langLabel">EN</span><span class="chevron">▾</span></button><div class="lang-drop-menu"><a href="index.html" class="lang-drop-item active" hreflang="en" lang="en">English</a><a href="ta/index.html" class="lang-drop-item" hreflang="ta" lang="ta">தமிழ்</a></div></div></li>
     </ul>
-    <button class="hamburger" id="hbg" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-actions">
+      <div class="lang-drop" id="langDrop"><button class="lang-drop-toggle" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(); return false;"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg><span id="langLabel">EN</span><span class="chevron">▾</span></button><div class="lang-drop-menu"><a href="index.html" class="lang-drop-item active" hreflang="en" lang="en">English</a><a href="ta/index.html" class="lang-drop-item" hreflang="ta" lang="ta">தமிழ்</a></div></div>
+      <button class="hamburger" id="hbg" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
