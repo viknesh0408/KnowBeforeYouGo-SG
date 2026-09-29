@@ -239,15 +239,15 @@
   
   // Load content when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadAdminContent);
+    document.addEventListener('DOMContentLoaded', loadSiteContent);
   } else {
-    loadAdminContent();
+    loadSiteContent();
   }
   
   // Also load when storage changes
   window.addEventListener('storage', function(e) {
     if (e.key === 'siteContent') {
-      loadAdminContent();
+      loadSiteContent();
     }
   });
 })();

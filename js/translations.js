@@ -13,6 +13,47 @@ const translations = {
     'Travel Tips': 'பயண குறிப்புகள்',
     'Contact': 'தொடர்பு',
     'Home': 'முகப்பு',
+    'About': 'எங்களைப் பற்றி',
+    'About & Sources': 'எங்களைப் பற்றி மற்றும் ஆதாரங்கள்',
+    'About KnowBeforeYouGo': 'KnowBeforeYouGo பற்றி',
+    'Privacy': 'தனியுரிமை',
+    'Privacy Policy': 'தனியுரிமைக் கொள்கை',
+    'Legal': 'சட்டத் தகவல்',
+    'Resources': 'வளங்கள்',
+    'Connect': 'தொடர்பு கொள்ளுங்கள்',
+    'Visa Guide': 'விசா வழிகாட்டி',
+    'About & Sources | KnowBeforeYouGo': 'எங்களைப் பற்றியும் ஆதாரங்களும் | KnowBeforeYouGo',
+
+    // About and privacy pages
+    'KnowBeforeYouGo is a free awareness guide for Tamil-speaking workers and travellers heading to Singapore. It explains work pass steps, visa basics and local laws in plain language, so people can spot scams and avoid costly mistakes before they travel.': 'சிங்கப்பூருக்குச் செல்லும் தமிழ் பேசும் தொழிலாளர்கள் மற்றும் பயணிகளுக்கான இலவச விழிப்புணர்வு வழிகாட்டி KnowBeforeYouGo. பணி அனுமதி நடைமுறைகள், விசா அடிப்படைகள் மற்றும் உள்ளூர் சட்டங்களை எளிய மொழியில் விளக்கி, பயணத்திற்கு முன் மோசடிகளையும் செலவான தவறுகளையும் தவிர்க்க உதவுகிறது.',
+    'Who runs this site': 'இந்தத் தளத்தை நடத்துவது யார்?',
+    'The site is built and maintained by Viknesh. Questions or corrections:': 'இந்தத் தளத்தை விக்னேஷ் உருவாக்கி பராமரிக்கிறார். கேள்விகள் அல்லது திருத்தங்களுக்கு:',
+    'How we verify information': 'தகவல்களை எவ்வாறு சரிபார்க்கிறோம்',
+    'Every fact is checked against official sources: the': 'ஒவ்வொரு தகவலும் அதிகாரப்பூர்வ ஆதாரங்களுடன் சரிபார்க்கப்படுகிறது:',
+    ', and the Singapore Police Force. Salary thresholds and rules change often, so each page shows the date it was last verified. If you spot something outdated, please tell us and we will fix it.': ', மற்றும் சிங்கப்பூர் காவல் படை. சம்பள வரம்புகளும் விதிகளும் அடிக்கடி மாறுவதால், ஒவ்வொரு பக்கத்திலும் கடைசியாகச் சரிபார்த்த தேதி குறிப்பிடப்பட்டுள்ளது. காலாவதியான தகவலைக் கண்டால் தெரிவிக்கவும்; அதைத் திருத்துகிறோம்.',
+    'Disclaimer and terms of use': 'மறுப்பு மற்றும் பயன்பாட்டு விதிமுறைகள்',
+    'This site gives general information only. It is not legal, immigration or financial advice, and it is not affiliated with any Singapore government agency. Always confirm the current rules with MOM or ICA before making decisions. We are not liable for losses arising from use of this information.': 'இந்தத் தளம் பொதுவான தகவல்களை மட்டுமே வழங்குகிறது. இது சட்ட, குடியேற்ற அல்லது நிதி ஆலோசனை அல்ல; சிங்கப்பூர் அரசுத் துறைகளுடன் இணைக்கப்பட்டதும் அல்ல. முடிவெடுப்பதற்கு முன் MOM அல்லது ICA-விடம் தற்போதைய விதிகளை உறுதிப்படுத்தவும். இந்தத் தகவலைப் பயன்படுத்துவதால் ஏற்படும் இழப்புகளுக்கு நாங்கள் பொறுப்பல்ல.',
+    'Advertising': 'விளம்பரம்',
+    'The site is supported by Google AdSense ads. Advertisers do not influence our content. See our': 'இந்தத் தளம் Google AdSense விளம்பரங்கள் மூலம் ஆதரிக்கப்படுகிறது. விளம்பரதாரர்கள் எங்கள் உள்ளடக்கத்தைத் தீர்மானிப்பதில்லை. மேலும் விவரங்களுக்கு எங்கள்',
+    'for details.': 'பக்கத்தைப் பார்க்கவும்.',
+    'Last verified against official MOM, ICA and SPF sources: 29 September 2026': 'MOM, ICA மற்றும் SPF அதிகாரப்பூர்வ ஆதாரங்களுடன் கடைசியாகச் சரிபார்த்த நாள்: 29 செப்டம்பர் 2026',
+    'Last updated: 29 September 2026.': 'கடைசியாகப் புதுப்பிக்கப்பட்டது: 29 செப்டம்பர் 2026.',
+    'What we collect': 'நாங்கள் சேகரிக்கும் தகவல்கள்',
+    'Contact form:': 'தொடர்பு படிவம்:',
+    'the name, email, phone number and message you submit are sent through Formspree to our inbox, used only to reply to you.': 'நீங்கள் வழங்கும் பெயர், மின்னஞ்சல், தொலைபேசி எண் மற்றும் செய்தி Formspree வழியாக எங்கள் மின்னஞ்சலுக்கு அனுப்பப்படும்; உங்களுக்குப் பதிலளிக்க மட்டுமே பயன்படுத்தப்படும்.',
+    'Analytics:': 'பகுப்பாய்வு:',
+    'Google Analytics collects anonymous usage data (pages viewed, device type, approximate location) using cookies.': 'Google Analytics குக்கீகளைப் பயன்படுத்தி, பார்த்த பக்கங்கள், சாதன வகை மற்றும் தோராயமான இருப்பிடம் போன்ற அடையாளமற்ற பயன்பாட்டுத் தகவல்களைச் சேகரிக்கிறது.',
+    'Advertising:': 'விளம்பரம்:',
+    'Google AdSense and its partners may use cookies to show ads, including personalised ads based on your visits to this and other sites.': 'Google AdSense மற்றும் அதன் கூட்டாளர்கள், இந்தத் தளம் மற்றும் பிற தளங்களுக்கான உங்கள் வருகைகளின் அடிப்படையில் தனிப்பயனாக்கப்பட்ட விளம்பரங்கள் உட்பட விளம்பரங்களைக் காட்ட குக்கீகளைப் பயன்படுத்தலாம்.',
+    'Your choices': 'உங்கள் தேர்வுகள்',
+    'Manage or turn off personalised ads at': 'தனிப்பயனாக்கப்பட்ட விளம்பரங்களை இங்கே நிர்வகிக்கலாம் அல்லது முடக்கலாம்:',
+    'Block analytics with the': 'பகுப்பாய்வைக் கட்டுப்படுத்த இதைப் பயன்படுத்தவும்:',
+    ', or clear cookies in your browser.': ', அல்லது உங்கள் உலாவியில் உள்ள குக்கீகளை அழிக்கவும்.',
+    'Sharing and retention': 'தகவல் பகிர்வு மற்றும் சேமிப்பு',
+    'We do not sell personal data. Contact messages are kept only as long as needed to respond. You can ask us to delete your message at any time.': 'தனிப்பட்ட தகவல்களை நாங்கள் விற்பதில்லை. பதிலளிக்கத் தேவையான காலம் மட்டுமே தொடர்புச் செய்திகள் சேமிக்கப்படும். உங்கள் செய்தியை எந்த நேரத்திலும் நீக்குமாறு கோரலாம்.',
+    'Children': 'குழந்தைகள்',
+    'This site is not directed at children under 13 and we do not knowingly collect their data.': 'இந்தத் தளம் 13 வயதுக்குக் குறைவான குழந்தைகளுக்காக உருவாக்கப்படவில்லை; அவர்களின் தகவல்களை நாங்கள் அறிந்தே சேகரிப்பதில்லை.',
+    'Privacy questions or deletion requests:': 'தனியுரிமை தொடர்பான கேள்விகள் அல்லது தகவல் நீக்கக் கோரிக்கைகள்:',
 
     // Work Pass Section
     'Work Pass Information': 'பணி பாஸ் தகவல்',
@@ -212,7 +253,7 @@ function storeOriginalContent() {
   let i = 0;
   while (node = walker.nextNode()) {
     const txt = node.textContent.trim();
-    if (txt && txt.length > 0 && !txt.match(/^\d+$/) && !node.parentElement.classList.contains('lang-drop') && !node.parentElement.closest('.nav-links') && !node.parentElement.closest('.blog-meta')) {
+    if (txt && txt.length > 0 && !txt.match(/^\d+$/) && !node.parentElement.closest('.lang-drop')) {
       originalContent[i] = { node: node, original: txt };
       i++;
     }
@@ -261,7 +302,7 @@ document.addEventListener('click', function(e) {
 
 window.addEventListener('DOMContentLoaded', () => {
   storeOriginalContent();
-  const saved = localStorage.getItem('preferredLang') || 'en';
+  const saved = location.pathname.split('/').includes('ta') ? 'ta' : (localStorage.getItem('preferredLang') || 'en');
   if (saved === 'ta') {
     changeLang('ta');
   } else {
