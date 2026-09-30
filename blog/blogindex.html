@@ -240,6 +240,7 @@ footer{background:#050C14;padding:36px 5%;display:flex;align-items:center;justif
 
 <script src="../js/translations.js"></script>
 <script>
+function toggleLang(){const drop=document.getElementById('langDrop'),button=drop.querySelector('.lang-drop-toggle'),open=drop.classList.toggle('open');button.setAttribute('aria-expanded',open);}
 const nav=document.getElementById('mainnav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
 const hbg=document.getElementById('hbg'),nl=document.getElementById('navLinks');
