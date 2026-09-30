@@ -26,7 +26,6 @@
 
   document.documentElement.lang = 'ta';
   document.body.lang = 'ta';
-  localStorage.setItem('preferredLang', 'ta');
   if (pageTitles[fileName]) document.title = pageTitles[fileName];
   if (typeof window.changeLang === 'function') {
     window.addEventListener('DOMContentLoaded', () => window.changeLang('ta'), { once: true });
@@ -41,9 +40,10 @@
     .nav-i>.lang-drop .lang-drop-toggle{width:auto}
     .nav-i>.lang-drop .lang-drop-menu{left:auto;right:0}
     @media(max-width:768px){.ta-route-switch{margin-left:auto}.nav-i>.lang-drop{margin:0 0 0 auto;width:auto}.nav-i>.lang-drop .lang-drop-toggle{width:auto}.nav-i>.lang-drop .lang-drop-menu{left:auto;right:0;transform:translateY(-8px) scale(.96)}.nav-i>.lang-drop.open .lang-drop-menu{transform:translateY(0) scale(1)}}
-    html[lang=ta] body{font-family:'Noto Sans Tamil','DM Sans',sans-serif}
+    html[lang=ta] *{font-family:'Noto Sans Tamil','DM Sans',sans-serif}html[lang=ta] h1,html[lang=ta] h2,html[lang=ta] h3{line-height:1.35}
   `;
   document.head.append(style);
+  const font = document.createElement('link'); font.rel='stylesheet'; font.href='https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap'; document.head.append(font);
 
   if (languageDrop && nav) {
     const englishLink = document.getElementById('langEnItem');

@@ -260,7 +260,12 @@ function storeOriginalContent() {
   }
 }
 
+function isTaPage(){return location.pathname.split('/').includes('ta');}
+function taUrl(){var p=location.pathname.replace(/\/index\.html$/,'/');if(p==='/'||p==='')return '/ta/index.html';if(p.endsWith('/blog/'))p+='blogindex.html';else if(p.endsWith('/'))p+='index.html';return '/ta'+p;}
+function enUrl(){var p=location.pathname.replace(/^\/ta(?=\/|$)/,'')||'/';return p==='/index.html'?'/':p;}
 function changeLang(lang) {
+  if (lang === 'ta' && !isTaPage()) { location.href = taUrl(); return; }
+  if (lang === 'en' && isTaPage()) { location.href = enUrl(); return; }
   const drop = document.getElementById('langDrop');
   if (drop) drop.classList.remove('open');
 
@@ -289,7 +294,6 @@ function changeLang(lang) {
       }
     });
   }
-  localStorage.setItem('preferredLang', lang);
 }
 
 // Initialize on page load
@@ -302,7 +306,7 @@ document.addEventListener('click', function(e) {
 
 window.addEventListener('DOMContentLoaded', () => {
   storeOriginalContent();
-  const saved = location.pathname.split('/').includes('ta') ? 'ta' : (localStorage.getItem('preferredLang') || 'en');
+  const saved = isTaPage() ? 'ta' : 'en';
   if (saved === 'ta') {
     changeLang('ta');
   } else {
