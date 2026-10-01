@@ -24,6 +24,14 @@
   const hamburger = document.getElementById('hbg');
   const languageDrop = document.getElementById('langDrop');
 
+  if (typeof window.toggleLang !== 'function') {
+    window.toggleLang = () => {
+      if (!languageDrop) return;
+      const isOpen = languageDrop.classList.toggle('open');
+      languageDrop.querySelector('.lang-drop-toggle')?.setAttribute('aria-expanded', String(isOpen));
+    };
+  }
+
   document.documentElement.lang = 'ta';
   document.body.lang = 'ta';
   if (pageTitles[fileName]) document.title = pageTitles[fileName];
